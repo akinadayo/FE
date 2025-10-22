@@ -1,12 +1,6 @@
 import { createClient } from '@/lib/supabase/client';
-import { getAllTopics } from '@/lib/syllabus';
+import { getAllTopicsWithCategory, type TopicWithCategory } from '@/lib/syllabus';
 import type { TopicProgress } from '@/lib/types';
-
-interface Topic {
-  id: string;
-  タイトル: string;
-  大分類: string;
-}
 
 export interface RecommendedTopic {
   topicId: string;
@@ -42,7 +36,7 @@ export async function getRecommendedTopics(
     if (progressError) throw progressError;
 
     // 2. 全トピックを取得
-    const allTopics = getAllTopics();
+    const allTopics = getAllTopicsWithCategory();
 
     // 3. 弱点分野を検出（テスト正解率が低い）
     const weakAreas = detectWeakAreas(progress || [], allTopics);
@@ -71,7 +65,7 @@ export async function getRecommendedTopics(
  */
 function detectWeakAreas(
   progress: TopicProgress[],
-  allTopics: Topic[]
+  allTopics: TopicWithCategory[]
 ): RecommendedTopic[] {
   return progress
     .filter(p => {
@@ -101,7 +95,7 @@ function detectWeakAreas(
  */
 function detectReviewNeeded(
   progress: TopicProgress[],
-  allTopics: Topic[]
+  allTopics: TopicWithCategory[]
 ): RecommendedTopic[] {
   const now = new Date();
   const sevenDaysAgo = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
@@ -144,7 +138,7 @@ function detectReviewNeeded(
  */
 function suggestNextTopics(
   progress: TopicProgress[],
-  allTopics: Topic[]
+  allTopics: TopicWithCategory[]
 ): RecommendedTopic[] {
   const completedTopicIds = new Set(
     progress

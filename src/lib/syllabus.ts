@@ -1,6 +1,10 @@
 import syllabusData from '@/data/syllabus.json'
 import { SyllabusData, Topic } from './types'
 
+export interface TopicWithCategory extends Topic {
+  大分類: string
+}
+
 export function getSyllabusData(): SyllabusData {
   return syllabusData as SyllabusData
 }
@@ -13,6 +17,26 @@ export function getAllTopics(): Topic[] {
     category.中分類.forEach((midCategory) => {
       midCategory.小分類.forEach((subCategory) => {
         topics.push(...subCategory.トピック)
+      })
+    })
+  })
+
+  return topics
+}
+
+export function getAllTopicsWithCategory(): TopicWithCategory[] {
+  const syllabus = getSyllabusData()
+  const topics: TopicWithCategory[] = []
+
+  syllabus.大分類.forEach((category) => {
+    category.中分類.forEach((midCategory) => {
+      midCategory.小分類.forEach((subCategory) => {
+        subCategory.トピック.forEach((topic) => {
+          topics.push({
+            ...topic,
+            大分類: category.名称,
+          })
+        })
       })
     })
   })
