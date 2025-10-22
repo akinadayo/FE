@@ -12,6 +12,7 @@ import { useStudySession } from "@/lib/hooks/use-study-session";
 import { useTopicActions } from "@/lib/hooks/use-topic-actions";
 import { triggerAchievementCheckAfterTopicComplete } from "@/lib/achievements/trigger";
 import { AIChat } from "@/components/AIChat";
+import { useSoundEffect } from "@/hooks/use-sound";
 
 interface ExplanationProps {
   onNavigate: (screen: string, data?: Record<string, unknown>) => void;
@@ -57,6 +58,7 @@ export function Explanation({ onNavigate, unitData }: ExplanationProps) {
 
   const { startSession, endSession } = useStudySession(user?.id, unitData?.topicId);
   const { markExplanationCompleted } = useTopicActions(user?.id);
+  const playSound = useSoundEffect();
 
   const topic = unitData?.topicId ? getTopicById(unitData.topicId) : null;
   const nextTopic = unitData?.topicId ? getNextTopic(unitData.topicId) : null;
@@ -154,6 +156,7 @@ export function Explanation({ onNavigate, unitData }: ExplanationProps) {
       });
 
       // Show completion screen
+      playSound('complete');
       setCompleted(true);
     } catch (error) {
       console.error('Error completing explanation:', error);
@@ -400,7 +403,10 @@ export function Explanation({ onNavigate, unitData }: ExplanationProps) {
                 variant="outline"
                 size="sm"
                 disabled={currentPage === 1}
-                onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
+                onClick={() => {
+                  playSound('transition');
+                  setCurrentPage(p => Math.max(1, p - 1));
+                }}
               >
                 <ChevronLeft className="w-4 h-4 mr-1" />
                 前へ
@@ -409,7 +415,10 @@ export function Explanation({ onNavigate, unitData }: ExplanationProps) {
                 variant="outline"
                 size="sm"
                 disabled={currentPage === totalPages}
-                onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
+                onClick={() => {
+                  playSound('transition');
+                  setCurrentPage(p => Math.min(totalPages, p + 1));
+                }}
               >
                 次へ
                 <ChevronRight className="w-4 h-4 ml-1" />
@@ -422,7 +431,10 @@ export function Explanation({ onNavigate, unitData }: ExplanationProps) {
                 min={1}
                 max={totalPages}
                 step={1}
-                onValueChange={(v) => setCurrentPage(v[0])}
+                onValueChange={(v) => {
+                  playSound('click');
+                  setCurrentPage(v[0]);
+                }}
               />
               <p className="text-center text-sm text-muted-foreground">
                 {currentPage} / {totalPages}
@@ -458,7 +470,10 @@ export function Explanation({ onNavigate, unitData }: ExplanationProps) {
               variant="outline"
               size="sm"
               disabled={currentPage === 1}
-              onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
+              onClick={() => {
+                playSound('transition');
+                setCurrentPage(p => Math.max(1, p - 1));
+              }}
             >
               <ChevronLeft className="w-4 h-4 mr-1" />
               前へ
@@ -467,7 +482,10 @@ export function Explanation({ onNavigate, unitData }: ExplanationProps) {
               variant="outline"
               size="sm"
               disabled={currentPage === totalPages}
-              onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
+              onClick={() => {
+                playSound('transition');
+                setCurrentPage(p => Math.min(totalPages, p + 1));
+              }}
             >
               次へ
               <ChevronRight className="w-4 h-4 ml-1" />
@@ -480,7 +498,10 @@ export function Explanation({ onNavigate, unitData }: ExplanationProps) {
               min={1}
               max={totalPages}
               step={1}
-              onValueChange={(v) => setCurrentPage(v[0])}
+              onValueChange={(v) => {
+                playSound('click');
+                setCurrentPage(v[0]);
+              }}
             />
             <p className="text-center text-sm text-muted-foreground">
               {currentPage} / {totalPages}

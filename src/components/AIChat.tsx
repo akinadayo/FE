@@ -8,6 +8,7 @@ import { Input } from '@/components/ui/input';
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from '@/components/ui/sheet';
 import { MessageCircle, Send, X as CloseIcon } from 'lucide-react';
 import { chatWithAI, ChatMessage } from '@/lib/openrouter';
+import { useSoundEffect } from '@/hooks/use-sound';
 
 interface AIChatProps {
   topicTitle: string;
@@ -188,6 +189,7 @@ export function AIChat({ topicTitle, currentContent }: AIChatProps) {
   const [mounted, setMounted] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const playSound = useSoundEffect();
 
   useEffect(() => {
     setMounted(true);
@@ -236,6 +238,8 @@ ${currentContent.substring(0, 500)}...
   const handleSend = async () => {
     if (!input.trim() || loading) return;
 
+    playSound('click');
+
     const userMessage: ChatMessage = {
       role: 'user',
       content: input,
@@ -254,6 +258,7 @@ ${currentContent.substring(0, 500)}...
         content: response,
       };
 
+      playSound('notification');
       setMessages((prev) => [...prev, assistantMessage]);
     } catch (error) {
       console.error('AI chat error:', error);
