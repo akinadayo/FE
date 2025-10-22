@@ -131,7 +131,7 @@ const convertMarkdown = (text: string) => {
   // Convert LaTeX aligned environment
   html = html.replace(/\\begin\{aligned\}([\s\S]*?)\\end\{aligned\}/g, (match, content) => {
     // Replace LaTeX commands with HTML
-    let processedContent = content
+    const processedContent = content
       .replace(/&=/g, '=')  // Remove alignment markers
       .replace(/\\\\/g, '<br>')  // Line breaks
       .replace(/\^/g, '<sup>')  // Superscripts (will be closed later)
