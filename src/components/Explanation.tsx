@@ -387,7 +387,7 @@ export function Explanation({ onNavigate, unitData }: ExplanationProps) {
         </div>
 
         {/* Content */}
-        <div className="flex-1 space-y-2 overflow-auto md:max-h-[calc(100vh-16rem)] pb-1">
+        <div className="flex-1 space-y-2 overflow-auto md:max-h-[calc(100vh-16rem)] pb-1 md:pb-6">
           <Card className="p-6 space-y-6">
             <h2 className="text-xl font-semibold border-b pb-2">
               {currentPageData.title}
@@ -395,76 +395,10 @@ export function Explanation({ onNavigate, unitData }: ExplanationProps) {
 
             {currentPageData.sections.map((section, index) => renderSection(section, index))}
           </Card>
-
-          {/* Navigation - Mobile: inline */}
-          <div className="md:hidden bg-white dark:bg-gray-900 border rounded-lg p-4 space-y-4">
-            <div className="flex items-center justify-between gap-4">
-              <Button
-                variant="outline"
-                size="sm"
-                disabled={currentPage === 1}
-                onClick={() => {
-                  playSound('transition');
-                  setCurrentPage(p => Math.max(1, p - 1));
-                }}
-              >
-                <ChevronLeft className="w-4 h-4 mr-1" />
-                前へ
-              </Button>
-              <Button
-                variant="outline"
-                size="sm"
-                disabled={currentPage === totalPages}
-                onClick={() => {
-                  playSound('transition');
-                  setCurrentPage(p => Math.min(totalPages, p + 1));
-                }}
-              >
-                次へ
-                <ChevronRight className="w-4 h-4 ml-1" />
-              </Button>
-            </div>
-
-            <div className="space-y-2">
-              <Slider
-                value={[currentPage]}
-                min={1}
-                max={totalPages}
-                step={1}
-                onValueChange={(v) => {
-                  playSound('click');
-                  setCurrentPage(v[0]);
-                }}
-              />
-              <p className="text-center text-sm text-muted-foreground">
-                {currentPage} / {totalPages}
-              </p>
-            </div>
-
-            {currentPage === totalPages && (
-              <Button
-                className="w-full"
-                onClick={handleComplete}
-                disabled={completing}
-              >
-                {completing ? (
-                  <>
-                    <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2" />
-                    完了処理中...
-                  </>
-                ) : (
-                  <>
-                    <CheckCircle className="w-4 h-4 mr-2" />
-                    解説を完了する
-                  </>
-                )}
-              </Button>
-            )}
-          </div>
         </div>
 
-        {/* Navigation - Desktop: fixed */}
-        <div className="hidden md:block md:static bg-white dark:bg-gray-900 border-t p-4 space-y-4 max-w-4xl mx-auto">
+        {/* Navigation - Mobile: inline, Desktop: sticky */}
+        <div className="bg-white dark:bg-gray-900 border-t md:border rounded-lg md:rounded-none p-4 space-y-4 max-w-4xl mx-auto md:static">
           <div className="flex items-center justify-between gap-4">
             <Button
               variant="outline"
