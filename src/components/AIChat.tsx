@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from '@/components/ui/sheet';
-import { MessageCircle, Send, X as CloseIcon } from 'lucide-react';
+import { MessageCircle, Send } from 'lucide-react';
 import { chatWithAI, ChatMessage } from '@/lib/openrouter';
 import { useSoundEffect } from '@/hooks/use-sound';
 
@@ -127,6 +127,22 @@ const convertMarkdown = (text: string) => {
 
   // Convert simple superscripts ^x to <sup>x</sup> (single character or digit)
   html = html.replace(/\^([0-9a-zA-Z])/g, '<sup>$1</sup>');
+
+  // Convert LaTeX aligned environment
+  html = html.replace(/\\begin\{aligned\}([\s\S]*?)\\end\{aligned\}/g, (match, content) => {
+    // Replace LaTeX commands with HTML
+    let processedContent = content
+      .replace(/&=/g, '=')  // Remove alignment markers
+      .replace(/\\\\/g, '<br>')  // Line breaks
+      .replace(/\^/g, '<sup>')  // Superscripts (will be closed later)
+      .replace(/\{(\d+)\}/g, '$1</sup>')  // Close superscripts
+      .replace(/×/g, '×')
+      .trim();
+
+    return `<div class="my-3 p-3 bg-blue-50 dark:bg-blue-900 rounded border border-blue-200 dark:border-blue-700">
+      <div class="font-mono text-sm whitespace-pre-wrap">${processedContent}</div>
+    </div>`;
+  });
 
   // Convert $$ formula $$ to formatted block
   html = html.replace(/\$\$([\s\S]*?)\$\$/g, '<div class="my-2 p-2 bg-gray-100 dark:bg-gray-800 rounded font-mono text-sm">$1</div>');
@@ -304,24 +320,14 @@ ${currentContent.substring(0, 500)}...
       <Sheet open={isOpen} onOpenChange={setIsOpen}>
         <SheetContent side="right" className="w-full sm:max-w-md flex flex-col p-0 z-50 bg-white dark:bg-gray-900" style={{ zIndex: 9999 }}>
           <SheetHeader className="p-4 border-b bg-white dark:bg-gray-900">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center">
-                  <MessageCircle className="w-4 h-4 text-white" />
-                </div>
-                <div>
-                  <SheetTitle>AI先生に質問</SheetTitle>
-                  <p className="text-xs text-muted-foreground">{topicTitle}</p>
-                </div>
+            <div className="flex items-center gap-2">
+              <div className="w-8 h-8 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center">
+                <MessageCircle className="w-4 h-4 text-white" />
               </div>
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => setIsOpen(false)}
-                className="h-8 w-8 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700"
-              >
-                <CloseIcon className="h-5 w-5 text-gray-600 dark:text-gray-400" />
-              </Button>
+              <div>
+                <SheetTitle>AI先生に質問</SheetTitle>
+                <p className="text-xs text-muted-foreground">{topicTitle}</p>
+              </div>
             </div>
           </SheetHeader>
 
