@@ -1,0 +1,175 @@
+{
+  "topicId": "tech-3-3-3",
+  "title": "データ操作",
+  "pages": [
+    {
+      "id": 1,
+      "title": "SQLとは",
+      "sections": [
+        {
+          "type": "text",
+          "content": "**SQL（Structured Query Language、構造化問い合わせ言語）**とは、関係データベース（RDBMS）を操作するための標準的な言語です。SQLは、データの検索（SELECT）、挿入（INSERT）、更新（UPDATE）、削除（DELETE）など、データ操作の全てをカバーします。SQLはISOで標準化されており、Oracle Database、MySQL、PostgreSQL、SQL Serverなど、多くのデータベース製品で共通して使用できます。基本情報技術者試験では、SELECT文を中心にSQLの基礎を理解することが重要です。"
+        },
+        {
+          "type": "table",
+          "headers": ["SQL分類", "説明", "主な命令", "具体例"],
+          "rows": [
+            ["DDL（データ定義言語）", "表の構造を定義", "CREATE, ALTER, DROP", "CREATE TABLE 社員表 (社員ID INT, 氏名 VARCHAR(50))"],
+            ["DML（データ操作言語）", "データを操作", "SELECT, INSERT, UPDATE, DELETE", "SELECT * FROM 社員表 WHERE 部署ID = 10"],
+            ["DCL（データ制御言語）", "権限管理、トランザクション管理", "GRANT, REVOKE, COMMIT, ROLLBACK", "GRANT SELECT ON 社員表 TO ユーザーA"]
+          ]
+        },
+        {
+          "type": "highlight",
+          "icon": "📊",
+          "title": "サンプルデータベース（以降の例で使用）",
+          "content": "●社員表（社員ID, 氏名, 部署ID, 給与）\n1, 佐藤, 10, 300000\n2, 田中, 10, 350000\n3, 鈴木, 20, 400000\n4, 高橋, 20, 320000\n5, 山田, 30, 280000\n\n●部署表（部署ID, 部署名）\n10, 営業部\n20, 経理部\n30, 総務部"
+        },
+        {
+          "type": "example",
+          "title": "SELECT文の基本構文",
+          "content": "SELECT 列名1, 列名2, ... FROM 表名 WHERE 条件 ORDER BY 列名;\n\n【具体例1】全ての社員を検索\nSELECT * FROM 社員表;\n→ 結果：全5行（佐藤、田中、鈴木、高橋、山田）を取得\n\n【具体例2】部署ID=10の社員を検索\nSELECT 氏名, 給与 FROM 社員表 WHERE 部署ID = 10;\n→ 結果：佐藤（300000）、田中（350000）の2行を取得\n\n【具体例3】給与の高い順に並べ替え\nSELECT 氏名, 給与 FROM 社員表 ORDER BY 給与 DESC;\n→ 結果：鈴木（400000）、田中（350000）、高橋（320000）、佐藤（300000）、山田（280000）の順に取得\n※ DESC：降順（高→低）、ASC：昇順（低→高、デフォルト）"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "射影・選択・結合",
+      "sections": [
+        {
+          "type": "text",
+          "content": "関係データベースの基本操作には、**射影（Projection）**、**選択（Selection）**、**結合（Join）**の3つがあります。これらはSELECT文の構成要素に対応しており、データベース操作の基本となります。射影は列の抽出、選択は行の抽出、結合は複数表の組み合わせを意味します。これらを組み合わせることで、複雑なデータ検索が可能になります。"
+        },
+        {
+          "type": "highlight",
+          "icon": "🎯",
+          "title": "射影・選択・結合の定義",
+          "content": "①射影（Projection）：特定の列を抽出（SELECT句で列を指定）\n例：SELECT 氏名, 給与 FROM 社員表; → 氏名と給与の列のみ抽出\n\n②選択（Selection）：特定の行を抽出（WHERE句で条件を指定）\n例：SELECT * FROM 社員表 WHERE 部署ID = 10; → 部署ID=10の行のみ抽出\n\n③結合（Join）：複数の表を結合（FROM句やJOIN句で表を指定）\n例：SELECT 氏名, 部署名 FROM 社員表 JOIN 部署表 ON 社員表.部署ID = 部署表.部署ID;"
+        },
+        {
+          "type": "example",
+          "title": "射影の具体例",
+          "content": "【全列を取得（*）】\nSELECT * FROM 社員表;\n→ 結果：社員ID, 氏名, 部署ID, 給与の全4列を取得\n\n【特定の列のみ取得（射影）】\nSELECT 氏名, 給与 FROM 社員表;\n→ 結果：氏名, 給与の2列のみを取得（社員ID, 部署IDは含まれない）\n1行目：佐藤, 300000\n2行目：田中, 350000\n...\n\n射影により、必要な列のみを抽出し、データ量を削減できます。例えば、社員一覧を表示する画面で、社員IDは不要な場合、氏名と給与のみを射影します。"
+        },
+        {
+          "type": "example",
+          "title": "選択の具体例（WHERE句）",
+          "content": "【条件に合う行を抽出（選択）】\nSELECT * FROM 社員表 WHERE 給与 >= 350000;\n→ 結果：給与が350000以上の行のみを取得\n2, 田中, 10, 350000\n3, 鈴木, 20, 400000\n\n【複数条件（AND, OR）】\nSELECT * FROM 社員表 WHERE 部署ID = 10 AND 給与 >= 300000;\n→ 結果：部署ID=10 かつ 給与>=300000の行（佐藤、田中）\n\nSELECT * FROM 社員表 WHERE 部署ID = 10 OR 給与 >= 400000;\n→ 結果：部署ID=10 または 給与>=400000の行（佐藤、田中、鈴木）\n\n【範囲検索（BETWEEN）】\nSELECT * FROM 社員表 WHERE 給与 BETWEEN 300000 AND 350000;\n→ 結果：給与が300000以上350000以下の行（佐藤、田中、高橋）\n\n【部分一致検索（LIKE）】\nSELECT * FROM 社員表 WHERE 氏名 LIKE '田%';\n→ 結果：氏名が「田」で始まる行（田中）\n※ %：任意の文字列、_：任意の1文字"
+        },
+        {
+          "type": "example",
+          "title": "結合の具体例（JOIN）",
+          "content": "【内部結合（INNER JOIN）】\nSELECT 社員表.氏名, 部署表.部署名, 社員表.給与\nFROM 社員表\nINNER JOIN 部署表 ON 社員表.部署ID = 部署表.部署ID;\n\n→ 結果：社員表と部署表を部署IDで結合し、氏名、部署名、給与を取得\n佐藤, 営業部, 300000\n田中, 営業部, 350000\n鈴木, 経理部, 400000\n高橋, 経理部, 320000\n山田, 総務部, 280000\n\n内部結合により、社員表の部署ID（10, 20, 30）を部署表の部署名（営業部、経理部、総務部）に変換できます。社員表だけでは部署IDしか分かりませんが、部署表と結合することで部署名も表示できます。"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "集計関数とGROUP BY",
+      "sections": [
+        {
+          "type": "text",
+          "content": "**集計関数（Aggregate Function）**とは、複数の行をグループ化し、統計値を計算する関数です。COUNT（行数）、SUM（合計）、AVG（平均）、MAX（最大）、MIN（最小）の5つが基本です。**GROUP BY句**は、指定した列の値ごとにグループ化し、各グループに対して集計関数を適用します。**HAVING句**は、GROUP BYでグループ化した後、グループを絞り込む条件を指定します（WHERE句は行を絞り込む、HAVING句はグループを絞り込む）。"
+        },
+        {
+          "type": "table",
+          "headers": ["集計関数", "説明", "具体例", "結果"],
+          "rows": [
+            ["COUNT(*)", "行数をカウント", "SELECT COUNT(*) FROM 社員表;", "5（全5行）"],
+            ["SUM(列名)", "指定列の合計", "SELECT SUM(給与) FROM 社員表;", "1650000（300000+350000+400000+320000+280000）"],
+            ["AVG(列名)", "指定列の平均", "SELECT AVG(給与) FROM 社員表;", "330000（1650000÷5）"],
+            ["MAX(列名)", "指定列の最大値", "SELECT MAX(給与) FROM 社員表;", "400000（鈴木の給与）"],
+            ["MIN(列名)", "指定列の最小値", "SELECT MIN(給与) FROM 社員表;", "280000（山田の給与）"]
+          ]
+        },
+        {
+          "type": "example",
+          "title": "GROUP BYの具体例",
+          "content": "【部署ごとの社員数をカウント】\nSELECT 部署ID, COUNT(*) AS 社員数\nFROM 社員表\nGROUP BY 部署ID;\n\n→ 結果：\n部署ID | 社員数\n10 | 2（佐藤、田中）\n20 | 2（鈴木、高橋）\n30 | 1（山田）\n\n【部署ごとの平均給与を計算】\nSELECT 部署ID, AVG(給与) AS 平均給与\nFROM 社員表\nGROUP BY 部署ID;\n\n→ 結果：\n部署ID | 平均給与\n10 | 325000（(300000+350000)÷2）\n20 | 360000（(400000+320000)÷2）\n30 | 280000（280000÷1）\n\nGROUP BYにより、部署IDごとにグループ化し、各グループの社員数や平均給与を集計できます。"
+        },
+        {
+          "type": "example",
+          "title": "HAVINGの具体例",
+          "content": "【平均給与が300000以上の部署のみ抽出】\nSELECT 部署ID, AVG(給与) AS 平均給与\nFROM 社員表\nGROUP BY 部署ID\nHAVING AVG(給与) >= 300000;\n\n→ 結果：\n部署ID | 平均給与\n10 | 325000\n20 | 360000\n※ 部署ID=30（平均給与280000）は除外される\n\n【WHEREとHAVINGの違い】\n①WHERE：グループ化前に行を絞り込む\n例：SELECT 部署ID, AVG(給与) FROM 社員表 WHERE 給与 >= 300000 GROUP BY 部署ID;\n→ 給与>=300000の行（佐藤、田中、鈴木、高橋）のみをグループ化\n\n②HAVING：グループ化後にグループを絞り込む\n例：SELECT 部署ID, AVG(給与) FROM 社員表 GROUP BY 部署ID HAVING AVG(給与) >= 300000;\n→ 全行をグループ化後、平均給与>=300000のグループのみを抽出"
+        },
+        {
+          "type": "highlight",
+          "icon": "💡",
+          "title": "SELECT文の実行順序",
+          "content": "①FROM：表を指定\n②WHERE：行を絞り込む（グループ化前）\n③GROUP BY：グループ化\n④HAVING：グループを絞り込む（グループ化後）\n⑤SELECT：列を射影\n⑥ORDER BY：並べ替え\n\n例：SELECT 部署ID, AVG(給与) FROM 社員表 WHERE 給与 >= 300000 GROUP BY 部署ID HAVING AVG(給与) >= 320000 ORDER BY 平均給与 DESC;"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "INSERT・UPDATE・DELETE",
+      "sections": [
+        {
+          "type": "text",
+          "content": "**INSERT文**は、表に新しい行を挿入します。**UPDATE文**は、既存の行のデータを更新します。**DELETE文**は、表から行を削除します。これらはDML（Data Manipulation Language、データ操作言語）に分類され、データベースの内容を変更する重要な操作です。SELECT文がデータを「読み取る」のに対し、INSERT/UPDATE/DELETEはデータを「書き込む」操作です。"
+        },
+        {
+          "type": "example",
+          "title": "INSERT文の具体例",
+          "content": "【基本構文】\nINSERT INTO 表名 (列名1, 列名2, ...) VALUES (値1, 値2, ...);\n\n【具体例1】新しい社員を追加\nINSERT INTO 社員表 (社員ID, 氏名, 部署ID, 給与)\nVALUES (6, '伊藤', 10, 290000);\n\n→ 結果：社員表に新しい行が追加される\n社員ID | 氏名 | 部署ID | 給与\n...\n6 | 伊藤 | 10 | 290000\n\n【具体例2】列名を省略（全列に値を挿入する場合）\nINSERT INTO 社員表 VALUES (7, '渡辺', 20, 310000);\n\n→ 結果：全列の順番通りに値を挿入\n\n【具体例3】複数行を一度に挿入\nINSERT INTO 社員表 (社員ID, 氏名, 部署ID, 給与)\nVALUES\n  (8, '中村', 30, 300000),\n  (9, '小林', 10, 320000);\n\n→ 結果：2行が一度に追加される"
+        },
+        {
+          "type": "example",
+          "title": "UPDATE文の具体例",
+          "content": "【基本構文】\nUPDATE 表名 SET 列名1 = 値1, 列名2 = 値2, ... WHERE 条件;\n\n【具体例1】佐藤の給与を320000に変更\nUPDATE 社員表 SET 給与 = 320000 WHERE 氏名 = '佐藤';\n\n→ 結果：佐藤の給与が300000→320000に更新される\n社員ID | 氏名 | 部署ID | 給与\n1 | 佐藤 | 10 | 320000（変更された）\n\n【具体例2】部署ID=10の全社員の給与を10%増加\nUPDATE 社員表 SET 給与 = 給与 * 1.1 WHERE 部署ID = 10;\n\n→ 結果：部署ID=10の社員（佐藤、田中）の給与が1.1倍になる\n佐藤：300000 → 330000\n田中：350000 → 385000\n\n【注意】WHERE句を省略すると、全行が更新される！\nUPDATE 社員表 SET 給与 = 300000;\n→ 全社員の給与が300000になる（意図しない場合が多いので注意）"
+        },
+        {
+          "type": "example",
+          "title": "DELETE文の具体例",
+          "content": "【基本構文】\nDELETE FROM 表名 WHERE 条件;\n\n【具体例1】山田を削除\nDELETE FROM 社員表 WHERE 氏名 = '山田';\n\n→ 結果：山田の行が削除される\n社員ID | 氏名 | 部署ID | 給与\n（山田の行が消える）\n\n【具体例2】部署ID=30の全社員を削除\nDELETE FROM 社員表 WHERE 部署ID = 30;\n\n→ 結果：部署ID=30の全社員（山田）が削除される\n\n【注意】WHERE句を省略すると、全行が削除される！\nDELETE FROM 社員表;\n→ 全社員が削除される（表の構造は残るが、データは全て消える）\n\n【DROP TABLEとの違い】\nDELETE FROM 社員表; → データのみ削除、表の構造は残る\nDROP TABLE 社員表; → 表自体を削除、データも構造も消える（DDL）"
+        },
+        {
+          "type": "highlight",
+          "icon": "⚠️",
+          "title": "UPDATE・DELETEの注意点",
+          "content": "①WHERE句を必ず指定：WHERE句を省略すると全行が更新・削除される\n②実行前に確認：まずSELECT文で対象行を確認してから実行\n例：DELETE FROM 社員表 WHERE 氏名 = '山田';\nを実行する前に、SELECT * FROM 社員表 WHERE 氏名 = '山田'; で対象行を確認\n③トランザクション管理：COMMIT前ならROLLBACKで元に戻せる"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "結合の種類（INNER JOIN, LEFT/RIGHT JOIN）",
+      "sections": [
+        {
+          "type": "text",
+          "content": "**結合（Join）**には、**内部結合（INNER JOIN）**と**外部結合（OUTER JOIN）**があります。内部結合は、両方の表に一致するデータがある行のみを取得します。外部結合は、一方の表に一致するデータがなくても、もう一方の表の行を取得します。外部結合には、**左外部結合（LEFT OUTER JOIN）**と**右外部結合（RIGHT OUTER JOIN）**があります。どちらを使うかは、どちらの表を基準にするかによります。"
+        },
+        {
+          "type": "example",
+          "title": "内部結合（INNER JOIN）の具体例",
+          "content": "【サンプルデータ】\n●社員表（社員ID, 氏名, 部署ID, 給与）\n1, 佐藤, 10, 300000\n2, 田中, 10, 350000\n3, 鈴木, 20, 400000\n4, 高橋, 99, 320000（部署ID=99は部署表に存在しない）\n\n●部署表（部署ID, 部署名）\n10, 営業部\n20, 経理部\n30, 総務部\n\n【内部結合（INNER JOIN）】\nSELECT 社員表.氏名, 部署表.部署名\nFROM 社員表\nINNER JOIN 部署表 ON 社員表.部署ID = 部署表.部署ID;\n\n→ 結果：両方の表に一致するデータがある行のみ取得\n佐藤, 営業部\n田中, 営業部\n鈴木, 経理部\n※ 高橋は除外される（部署ID=99が部署表に存在しないため）"
+        },
+        {
+          "type": "example",
+          "title": "左外部結合（LEFT OUTER JOIN）の具体例",
+          "content": "【左外部結合（LEFT OUTER JOIN）】\nSELECT 社員表.氏名, 部署表.部署名\nFROM 社員表\nLEFT OUTER JOIN 部署表 ON 社員表.部署ID = 部署表.部署ID;\n\n→ 結果：左側の表（社員表）の全行を取得し、右側の表（部署表）に一致するデータがない場合はNULLを表示\n佐藤, 営業部\n田中, 営業部\n鈴木, 経理部\n高橋, NULL（部署ID=99が部署表に存在しないため、部署名はNULL）\n\n左外部結合により、「全社員を表示し、部署名が分かる場合は表示、分からない場合はNULLを表示」という処理が可能です。例えば、部署未配属の社員も含めて全社員を表示したい場合に使います。"
+        },
+        {
+          "type": "example",
+          "title": "右外部結合（RIGHT OUTER JOIN）の具体例",
+          "content": "【右外部結合（RIGHT OUTER JOIN）】\nSELECT 社員表.氏名, 部署表.部署名\nFROM 社員表\nRIGHT OUTER JOIN 部署表 ON 社員表.部署ID = 部署表.部署ID;\n\n→ 結果：右側の表（部署表）の全行を取得し、左側の表（社員表）に一致するデータがない場合はNULLを表示\n佐藤, 営業部\n田中, 営業部\n鈴木, 経理部\nNULL, 総務部（総務部に所属する社員がいないため、氏名はNULL）\n\n右外部結合により、「全部署を表示し、その部署に所属する社員がいる場合は表示、いない場合はNULLを表示」という処理が可能です。例えば、「社員が0人の部署も含めて全部署を表示したい」場合に使います。"
+        },
+        {
+          "type": "table",
+          "headers": ["結合種類", "説明", "キーワード", "具体例"],
+          "rows": [
+            ["内部結合", "両方の表に一致するデータがある行のみ取得", "INNER JOIN", "社員と部署が一致する行のみ（高橋は除外）"],
+            ["左外部結合", "左側の表の全行 + 右側の一致データ（なければNULL）", "LEFT OUTER JOIN", "全社員 + 部署名（部署未配属の社員も表示、部署名はNULL）"],
+            ["右外部結合", "右側の表の全行 + 左側の一致データ（なければNULL）", "RIGHT OUTER JOIN", "全部署 + 社員名（社員0人の部署も表示、社員名はNULL）"]
+          ]
+        },
+        {
+          "type": "highlight",
+          "icon": "💡",
+          "title": "結合の使い分け",
+          "content": "①内部結合（INNER JOIN）：両方に存在するデータのみを取得したい場合\n例：部署が確定している社員のみを表示\n\n②左外部結合（LEFT OUTER JOIN）：左側の表の全行を取得したい場合\n例：全社員を表示（部署未配属の社員も含む）\n\n③右外部結合（RIGHT OUTER JOIN）：右側の表の全行を取得したい場合\n例：全部署を表示（社員0人の部署も含む）"
+        }
+      ]
+    }
+  ]
+}

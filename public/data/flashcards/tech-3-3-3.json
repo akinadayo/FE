@@ -1,0 +1,78 @@
+{
+  "topicId": "tech-3-3-3",
+  "title": "データ操作",
+  "flashcards": [
+    {
+      "id": "tech-3-3-3-fc-1",
+      "front": "SQL の3つの分類（DDL、DML、DCL）とは？",
+      "back": "①DDL（データ定義言語）：表の構造を定義（CREATE, ALTER, DROP）\n②DML（データ操作言語）：データを操作（SELECT, INSERT, UPDATE, DELETE）\n③DCL（データ制御言語）：権限管理、トランザクション管理（GRANT, REVOKE, COMMIT, ROLLBACK）",
+      "importance": 5
+    },
+    {
+      "id": "tech-3-3-3-fc-2",
+      "front": "射影・選択・結合とは？SQL文のどの部分に対応するか？",
+      "back": "①射影（Projection）：特定の列を抽出（SELECT句で列を指定）\n例：SELECT 氏名, 給与\n②選択（Selection）：特定の行を抽出（WHERE句で条件を指定）\n例：WHERE 部署ID = 10\n③結合（Join）：複数の表を結合（JOIN句で表を指定）\n例：JOIN 部署表 ON 社員表.部署ID = 部署表.部署ID",
+      "importance": 5
+    },
+    {
+      "id": "tech-3-3-3-fc-3",
+      "front": "5つの集計関数とその役割は？",
+      "back": "①COUNT(*)：行数をカウント\n②SUM(列名)：指定列の合計\n③AVG(列名)：指定列の平均\n④MAX(列名)：指定列の最大値\n⑤MIN(列名)：指定列の最小値\n例：SELECT AVG(給与) FROM 社員表; → 平均給与を計算",
+      "importance": 5
+    },
+    {
+      "id": "tech-3-3-3-fc-4",
+      "front": "GROUP BYとHAVINGの役割と違いは？",
+      "back": "GROUP BY：指定した列の値ごとにグループ化し、各グループに対して集計関数を適用\n例：GROUP BY 部署ID → 部署ごとの平均給与を計算\n\nHAVING：GROUP BYでグループ化した後、グループを絞り込む\n例：HAVING AVG(給与) >= 300000 → 平均給与300000以上の部署のみ抽出\n\n違い：WHEREは行を絞り込む、HAVINGはグループを絞り込む",
+      "importance": 5
+    },
+    {
+      "id": "tech-3-3-3-fc-5",
+      "front": "SELECT文の実行順序6ステップは？",
+      "back": "①FROM：表を指定\n②WHERE：行を絞り込む（グループ化前）\n③GROUP BY：グループ化\n④HAVING：グループを絞り込む（グループ化後）\n⑤SELECT：列を射影\n⑥ORDER BY：並べ替え",
+      "importance": 4
+    },
+    {
+      "id": "tech-3-3-3-fc-6",
+      "front": "INSERT文の基本構文と具体例は？",
+      "back": "構文：INSERT INTO 表名 (列名1, 列名2, ...) VALUES (値1, 値2, ...);\n\n具体例：INSERT INTO 社員表 (社員ID, 氏名, 部署ID, 給与) VALUES (6, '伊藤', 10, 290000);\n→ 社員表に新しい行が追加される\n\n複数行挿入：VALUES (値1, 値2), (値3, 値4);",
+      "importance": 4
+    },
+    {
+      "id": "tech-3-3-3-fc-7",
+      "front": "UPDATE文の基本構文と注意点は？",
+      "back": "構文：UPDATE 表名 SET 列名1 = 値1, 列名2 = 値2 WHERE 条件;\n\n具体例：UPDATE 社員表 SET 給与 = 320000 WHERE 氏名 = '佐藤';\n→ 佐藤の給与を320000に変更\n\n注意点：WHERE句を省略すると全行が更新される！実行前にSELECT文で対象行を確認",
+      "importance": 4
+    },
+    {
+      "id": "tech-3-3-3-fc-8",
+      "front": "DELETE文の基本構文と注意点は？",
+      "back": "構文：DELETE FROM 表名 WHERE 条件;\n\n具体例：DELETE FROM 社員表 WHERE 氏名 = '山田';\n→ 山田の行が削除される\n\n注意点：①WHERE句を省略すると全行が削除される！②DELETE FROMはデータのみ削除（表の構造は残る）、DROP TABLEは表自体を削除",
+      "importance": 4
+    },
+    {
+      "id": "tech-3-3-3-fc-9",
+      "front": "内部結合（INNER JOIN）と外部結合（LEFT/RIGHT OUTER JOIN）の違いは？",
+      "back": "内部結合（INNER JOIN）：両方の表に一致するデータがある行のみ取得\n例：部署が確定している社員のみ表示（部署ID=99の高橋は除外）\n\n左外部結合（LEFT OUTER JOIN）：左側の表の全行 + 右側の一致データ（なければNULL）\n例：全社員を表示（部署未配属の社員も表示、部署名はNULL）\n\n右外部結合（RIGHT OUTER JOIN）：右側の表の全行 + 左側の一致データ（なければNULL）\n例：全部署を表示（社員0人の部署も表示、社員名はNULL）",
+      "importance": 5
+    },
+    {
+      "id": "tech-3-3-3-fc-10",
+      "front": "WHERE句で使える条件指定の種類は？",
+      "back": "①比較演算子：=, !=, <, >, <=, >=\n例：WHERE 給与 >= 350000\n\n②論理演算子：AND, OR, NOT\n例：WHERE 部署ID = 10 AND 給与 >= 300000\n\n③範囲検索：BETWEEN\n例：WHERE 給与 BETWEEN 300000 AND 350000\n\n④部分一致検索：LIKE（%：任意の文字列、_：任意の1文字）\n例：WHERE 氏名 LIKE '田%'（田で始まる）",
+      "importance": 4
+    },
+    {
+      "id": "tech-3-3-3-fc-11",
+      "front": "ORDER BYの使い方と並べ替え方向は？",
+      "back": "構文：ORDER BY 列名 [ASC | DESC];\n\nASC：昇順（低→高、デフォルト）\nDESC：降順（高→低）\n\n具体例：SELECT 氏名, 給与 FROM 社員表 ORDER BY 給与 DESC;\n→ 結果：鈴木（400000）、田中（350000）、高橋（320000）...の順に取得",
+      "importance": 3
+    },
+    {
+      "id": "tech-3-3-3-fc-12",
+      "front": "WHEREとHAVINGの使い分けは？",
+      "back": "WHERE：グループ化前に行を絞り込む（集計関数は使えない）\n例：WHERE 給与 >= 300000 → 給与300000以上の行のみをグループ化\n\nHAVING：グループ化後にグループを絞り込む（集計関数を使える）\n例：HAVING AVG(給与) >= 300000 → 平均給与300000以上のグループのみ抽出\n\n実行順序：FROM → WHERE → GROUP BY → HAVING → SELECT → ORDER BY",
+      "importance": 5
+    }
+  ]
+}

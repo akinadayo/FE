@@ -1,0 +1,91 @@
+{
+  "topicId": "tech-1-1-1",
+  "title": "n進数",
+  "questions": [
+    {
+      "id": "q-tech-1-1-1-001",
+      "type": "multiple_choice",
+      "question": "2進数とは何個の数字を使って数値を表現する方法ですか？",
+      "options": ["1個", "2個", "8個", "10個"],
+      "correctAnswer": 1,
+      "explanation": "2進数は0と1の2つの数字のみを使用して数値を表現します。"
+    },
+    {
+      "id": "q-tech-1-1-1-002",
+      "type": "multiple_choice",
+      "question": "2進数1010を10進数に変換すると何になりますか？",
+      "options": ["8", "10", "12", "16"],
+      "correctAnswer": 1,
+      "explanation": "1010₍₂₎ = 1×2³ + 0×2² + 1×2¹ + 0×2⁰ = 8 + 0 + 2 + 0 = 10です。"
+    },
+    {
+      "id": "q-tech-1-1-1-003",
+      "type": "multiple_choice",
+      "question": "16進数Aは10進数で何を表しますか？",
+      "options": ["8", "9", "10", "11"],
+      "correctAnswer": 2,
+      "explanation": "16進数のAは10進数の10を表します。16進数では0～9、A～F（10～15）を使用します。"
+    },
+    {
+      "id": "q-tech-1-1-1-004",
+      "type": "multiple_choice",
+      "question": "10進数15を2進数で表すとどれになりますか？",
+      "options": ["1101", "1110", "1111", "10000"],
+      "correctAnswer": 2,
+      "explanation": "15 = 1×2³ + 1×2² + 1×2¹ + 1×2⁰ = 8 + 4 + 2 + 1なので、1111₍₂₎です。"
+    },
+    {
+      "id": "q-tech-1-1-1-005",
+      "type": "multiple_choice",
+      "question": "2進数4桁で表現できる数値の範囲はどれですか？",
+      "options": ["0～7", "0～15", "0～31", "0～63"],
+      "correctAnswer": 1,
+      "explanation": "2進数4桁は2⁴ = 16通りの値を表現でき、0000～1111の範囲、つまり0～15です。"
+    },
+    {
+      "id": "q-tech-1-1-1-006",
+      "type": "multiple_choice",
+      "question": "16進数1Fを10進数に変換すると何になりますか？",
+      "options": ["15", "21", "31", "37"],
+      "correctAnswer": 2,
+      "explanation": "1F₍₁₆₎ = 1×16¹ + F×16⁰ = 16 + 15 = 31です。"
+    },
+    {
+      "id": "q-tech-1-1-1-007",
+      "type": "multiple_choice",
+      "question": "n進数の「n」のことを何と呼びますか？",
+      "options": ["底数", "基数", "桁数", "係数"],
+      "correctAnswer": 1,
+      "explanation": "n進数の「n」は「基数」と呼ばれます。基数は、その進数で使用する数字の個数を表します。"
+    },
+    {
+      "id": "q-tech-1-1-1-008",
+      "type": "multiple_choice",
+      "question": "2進数1111を16進数で表すとどれになりますか？",
+      "options": ["E", "F", "10", "1F"],
+      "correctAnswer": 1,
+      "explanation": "2進数1111は10進数で15、16進数ではFです。2進数4桁は16進数1桁に対応します。"
+    },
+    {
+      "id": "q-tech-1-1-1-009",
+      "type": "multiple_choice",
+      "question": "8進数で使用する数字の範囲はどれですか？",
+      "options": ["0～7", "0～8", "1～8", "0～9"],
+      "correctAnswer": 0,
+      "explanation": "8進数は0から7までの8つの数字を使用します。"
+    },
+    {
+      "id": "q-tech-1-1-1-010",
+      "type": "multiple_choice",
+      "question": "コンピュータが2進数を使用する最大の理由は何ですか？",
+      "options": [
+        "計算が簡単だから",
+        "電気のON/OFFで表現できるから",
+        "人間が理解しやすいから",
+        "メモリを節約できるから"
+      ],
+      "correctAnswer": 1,
+      "explanation": "コンピュータは電気のON（1）/OFF（0）で情報を処理するため、2つの状態で表現できる2進数が最適です。"
+    }
+  ]
+}

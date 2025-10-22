@@ -1,0 +1,762 @@
+{
+  "topics": {
+    "tech-1-1-1": {
+      "status": "completed",
+      "title": "n進数",
+      "explanationPages": 5,
+      "flashcardCount": 12,
+      "questionCount": 10,
+      "lastUpdated": "2025-10-21"
+    },
+    "tech-1-1-2": {
+      "status": "completed",
+      "title": "2進数の計算",
+      "explanationPages": 5,
+      "flashcardCount": 12,
+      "questionCount": 10,
+      "lastUpdated": "2025-10-21"
+    },
+    "tech-1-1-3": {
+      "status": "completed",
+      "title": "集合と論理",
+      "explanationPages": 5,
+      "flashcardCount": 13,
+      "questionCount": 10,
+      "lastUpdated": "2025-10-21"
+    },
+    "tech-1-1-4": {
+      "status": "completed",
+      "title": "論理回路",
+      "explanationPages": 5,
+      "flashcardCount": 14,
+      "questionCount": 10,
+      "lastUpdated": "2025-10-21"
+    },
+    "tech-1-2-1": {
+      "status": "completed",
+      "title": "数値表現",
+      "explanationPages": 5,
+      "flashcardCount": 14,
+      "questionCount": 10,
+      "lastUpdated": "2025-10-21"
+    },
+    "tech-1-2-2": {
+      "status": "completed",
+      "title": "誤差",
+      "explanationPages": 5,
+      "flashcardCount": 14,
+      "questionCount": 10,
+      "lastUpdated": "2025-10-21"
+    },
+    "tech-1-2-3": {
+      "status": "completed",
+      "title": "確率と統計",
+      "explanationPages": 5,
+      "flashcardCount": 14,
+      "questionCount": 10,
+      "lastUpdated": "2025-10-21"
+    },
+    "tech-1-3-1": {
+      "status": "completed",
+      "title": "データの表現",
+      "explanationPages": 5,
+      "flashcardCount": 14,
+      "questionCount": 10,
+      "lastUpdated": "2025-10-21"
+    },
+    "tech-1-3-2": {
+      "status": "completed",
+      "title": "マルチメディア",
+      "explanationPages": 5,
+      "flashcardCount": 14,
+      "questionCount": 10,
+      "lastUpdated": "2025-10-21"
+    },
+    "tech-1-3-3": {
+      "status": "completed",
+      "title": "符号化",
+      "explanationPages": 5,
+      "flashcardCount": 14,
+      "questionCount": 10,
+      "lastUpdated": "2025-10-21"
+    },
+    "tech-1-4-1": {
+      "status": "completed",
+      "title": "伝送理論",
+      "explanationPages": 5,
+      "flashcardCount": 14,
+      "questionCount": 10,
+      "lastUpdated": "2025-10-21"
+    },
+    "tech-1-4-2": {
+      "status": "completed",
+      "title": "誤り制御",
+      "explanationPages": 5,
+      "flashcardCount": 14,
+      "questionCount": 10,
+      "lastUpdated": "2025-10-21"
+    },
+    "tech-2-1-1": {
+      "status": "completed",
+      "title": "プロセッサ（CPU）",
+      "explanationPages": 5,
+      "flashcardCount": 14,
+      "questionCount": 10,
+      "lastUpdated": "2025-10-21"
+    },
+    "tech-2-1-2": {
+      "status": "completed",
+      "title": "メモリ",
+      "explanationPages": 5,
+      "flashcardCount": 14,
+      "questionCount": 10,
+      "lastUpdated": "2025-10-21"
+    },
+    "tech-2-1-3": {
+      "status": "completed",
+      "title": "バスと入出力",
+      "explanationPages": 5,
+      "flashcardCount": 14,
+      "questionCount": 10,
+      "lastUpdated": "2025-10-21"
+    },
+    "tech-2-2-1": {
+      "status": "completed",
+      "title": "システム構成",
+      "explanationPages": 5,
+      "flashcardCount": 14,
+      "questionCount": 10,
+      "lastUpdated": "2025-10-21"
+    },
+    "tech-2-2-2": {
+      "status": "completed",
+      "title": "システムの性能",
+      "explanationPages": 5,
+      "flashcardCount": 12,
+      "questionCount": 10,
+      "lastUpdated": "2025-10-21"
+    },
+    "tech-2-2-3": {
+      "status": "completed",
+      "title": "システムの信頼性",
+      "explanationPages": 5,
+      "flashcardCount": 14,
+      "questionCount": 10,
+      "lastUpdated": "2025-10-21"
+    },
+    "tech-2-3-1": {
+      "status": "completed",
+      "title": "オペレーティングシステム（OS）",
+      "explanationPages": 5,
+      "flashcardCount": 14,
+      "questionCount": 10,
+      "lastUpdated": "2025-10-21"
+    },
+    "tech-2-3-2": {
+      "status": "completed",
+      "title": "ジョブ管理",
+      "explanationPages": 5,
+      "flashcardCount": 14,
+      "questionCount": 10,
+      "lastUpdated": "2025-10-21"
+    },
+    "tech-2-3-3": {
+      "status": "completed",
+      "title": "タスク管理",
+      "explanationPages": 5,
+      "flashcardCount": 14,
+      "questionCount": 10,
+      "lastUpdated": "2025-10-21"
+    },
+    "tech-2-3-4": {
+      "status": "not_created",
+      "title": "実記憶管理",
+      "explanationPages": 0,
+      "flashcardCount": 0,
+      "questionCount": 0,
+      "lastUpdated": "2025-10-21"
+    },
+    "tech-2-3-5": {
+      "status": "not_created",
+      "title": "仮想記憶管理",
+      "explanationPages": 0,
+      "flashcardCount": 0,
+      "questionCount": 0,
+      "lastUpdated": "2025-10-21"
+    },
+    "tech-2-3-6": {
+      "status": "not_created",
+      "title": "プログラムの性質",
+      "explanationPages": 0,
+      "flashcardCount": 0,
+      "questionCount": 0,
+      "lastUpdated": "2025-10-21"
+    },
+    "tech-2-4-1": {
+      "status": "completed",
+      "title": "補助記憶装置",
+      "explanationPages": 5,
+      "flashcardCount": 12,
+      "questionCount": 10,
+      "lastUpdated": "2025-10-21"
+    },
+    "tech-2-4-2": {
+      "status": "completed",
+      "title": "入力装置",
+      "explanationPages": 5,
+      "flashcardCount": 12,
+      "questionCount": 10,
+      "lastUpdated": "2025-10-21"
+    },
+    "tech-2-4-3": {
+      "status": "completed",
+      "title": "出力装置",
+      "explanationPages": 5,
+      "flashcardCount": 12,
+      "questionCount": 10,
+      "lastUpdated": "2025-10-21"
+    },
+    "tech-3-1-1": {
+      "status": "completed",
+      "title": "ヒューマンインタフェース技術",
+      "explanationPages": 5,
+      "flashcardCount": 12,
+      "questionCount": 10,
+      "lastUpdated": "2025-10-21"
+    },
+    "tech-3-1-2": {
+      "status": "completed",
+      "title": "入出力設計",
+      "explanationPages": 5,
+      "flashcardCount": 12,
+      "questionCount": 10,
+      "lastUpdated": "2025-10-21"
+    },
+    "tech-3-2-1": {
+      "status": "completed",
+      "title": "マルチメディア技術",
+      "explanationPages": 5,
+      "flashcardCount": 12,
+      "questionCount": 10,
+      "lastUpdated": "2025-10-21"
+    },
+    "tech-3-2-2": {
+      "status": "completed",
+      "title": "マルチメディア応用",
+      "explanationPages": 5,
+      "flashcardCount": 12,
+      "questionCount": 10,
+      "lastUpdated": "2025-10-21"
+    },
+    "tech-3-3-1": {
+      "status": "completed",
+      "title": "データベース方式",
+      "explanationPages": 5,
+      "flashcardCount": 12,
+      "questionCount": 10,
+      "lastUpdated": "2025-10-21"
+    },
+    "tech-3-3-2": {
+      "status": "completed",
+      "title": "データベース設計",
+      "explanationPages": 5,
+      "flashcardCount": 12,
+      "questionCount": 10,
+      "lastUpdated": "2025-10-21"
+    },
+    "tech-3-3-3": {
+      "status": "completed",
+      "title": "データ操作",
+      "explanationPages": 5,
+      "flashcardCount": 12,
+      "questionCount": 10,
+      "lastUpdated": "2025-10-21"
+    },
+    "tech-3-3-4": {
+      "status": "completed",
+      "title": "トランザクション処理",
+      "explanationPages": 5,
+      "flashcardCount": 12,
+      "questionCount": 10,
+      "lastUpdated": "2025-10-21"
+    },
+    "tech-3-3-5": {
+      "status": "completed",
+      "title": "データベース応用",
+      "explanationPages": 5,
+      "flashcardCount": 12,
+      "questionCount": 10,
+      "lastUpdated": "2025-10-21"
+    },
+    "tech-3-4-1": {
+      "status": "completed",
+      "title": "ネットワーク方式",
+      "explanationPages": 5,
+      "flashcardCount": 12,
+      "questionCount": 10,
+      "lastUpdated": "2025-10-22"
+    },
+    "tech-3-4-2": {
+      "status": "completed",
+      "title": "ネットワーク機器",
+      "explanationPages": 5,
+      "flashcardCount": 12,
+      "questionCount": 10,
+      "lastUpdated": "2025-10-22"
+    },
+    "tech-3-4-3": {
+      "status": "completed",
+      "title": "通信プロトコル",
+      "explanationPages": 5,
+      "flashcardCount": 12,
+      "questionCount": 10,
+      "lastUpdated": "2025-10-22"
+    },
+    "tech-3-4-4": {
+      "status": "completed",
+      "title": "ネットワーク応用",
+      "explanationPages": 5,
+      "flashcardCount": 12,
+      "questionCount": 10,
+      "lastUpdated": "2025-10-22"
+    },
+    "tech-3-5-1": {
+      "status": "completed",
+      "title": "情報セキュリティの基礎",
+      "explanationPages": 5,
+      "flashcardCount": 12,
+      "questionCount": 10,
+      "lastUpdated": "2025-10-22"
+    },
+    "tech-3-5-2": {
+      "status": "completed",
+      "title": "脅威と対策",
+      "explanationPages": 5,
+      "flashcardCount": 12,
+      "questionCount": 10,
+      "lastUpdated": "2025-10-22"
+    },
+    "tech-3-5-3": {
+      "status": "completed",
+      "title": "認証とアクセス制御",
+      "explanationPages": 5,
+      "flashcardCount": 12,
+      "questionCount": 10,
+      "lastUpdated": "2025-10-22"
+    },
+    "tech-3-5-4": {
+      "status": "completed",
+      "title": "暗号化技術",
+      "explanationPages": 5,
+      "flashcardCount": 12,
+      "questionCount": 10,
+      "lastUpdated": "2025-10-22"
+    },
+    "tech-3-5-5": {
+      "status": "completed",
+      "title": "セキュリティ対策",
+      "explanationPages": 5,
+      "flashcardCount": 12,
+      "questionCount": 10,
+      "lastUpdated": "2025-10-22"
+    },
+    "tech-4-1-1": {
+      "status": "completed",
+      "title": "システム開発プロセス",
+      "explanationPages": 5,
+      "flashcardCount": 12,
+      "questionCount": 10,
+      "lastUpdated": "2025-10-21"
+    },
+    "tech-4-1-2": {
+      "status": "completed",
+      "title": "開発手法",
+      "explanationPages": 5,
+      "flashcardCount": 12,
+      "questionCount": 10,
+      "lastUpdated": "2025-10-21"
+    },
+    "tech-4-1-3": {
+      "status": "completed",
+      "title": "モデリング",
+      "explanationPages": 5,
+      "flashcardCount": 12,
+      "questionCount": 10,
+      "lastUpdated": "2025-10-21"
+    },
+    "tech-4-1-4": {
+      "status": "completed",
+      "title": "テスト技法",
+      "explanationPages": 5,
+      "flashcardCount": 12,
+      "questionCount": 10,
+      "lastUpdated": "2025-10-22"
+    },
+    "tech-4-1-5": {
+      "status": "completed",
+      "title": "開発ツール",
+      "explanationPages": 5,
+      "flashcardCount": 12,
+      "questionCount": 10,
+      "lastUpdated": "2025-10-21"
+    },
+    "tech-4-2-1": {
+      "status": "completed",
+      "title": "モジュール設計",
+      "explanationPages": 5,
+      "flashcardCount": 12,
+      "questionCount": 10,
+      "lastUpdated": "2025-10-21"
+    },
+    "tech-4-2-2": {
+      "status": "completed",
+      "title": "プログラミング",
+      "explanationPages": 5,
+      "flashcardCount": 12,
+      "questionCount": 10,
+      "lastUpdated": "2025-10-21"
+    },
+    "tech-4-2-3": {
+      "status": "completed",
+      "title": "オブジェクト指向",
+      "explanationPages": 5,
+      "flashcardCount": 12,
+      "questionCount": 10,
+      "lastUpdated": "2025-10-21"
+    },
+    "tech-4-3-1": {
+      "status": "completed",
+      "title": "アルゴリズムの基礎",
+      "explanationPages": 5,
+      "flashcardCount": 12,
+      "questionCount": 10,
+      "lastUpdated": "2025-10-22"
+    },
+    "tech-4-3-2": {
+      "status": "completed",
+      "title": "データ構造",
+      "explanationPages": 5,
+      "flashcardCount": 12,
+      "questionCount": 10,
+      "lastUpdated": "2025-10-22"
+    },
+    "tech-4-3-3": {
+      "status": "completed",
+      "title": "探索アルゴリズム",
+      "explanationPages": 5,
+      "flashcardCount": 12,
+      "questionCount": 10,
+      "lastUpdated": "2025-10-22"
+    },
+    "tech-4-3-4": {
+      "status": "completed",
+      "title": "整列アルゴリズム",
+      "explanationPages": 5,
+      "flashcardCount": 12,
+      "questionCount": 10,
+      "lastUpdated": "2025-10-22"
+    },
+    "tech-4-3-5": {
+      "status": "completed",
+      "title": "アルゴリズムの計算量",
+      "explanationPages": 5,
+      "flashcardCount": 12,
+      "questionCount": 10,
+      "lastUpdated": "2025-10-22"
+    },
+    "tech-4-3-6": {
+      "status": "completed",
+      "title": "その他のアルゴリズム",
+      "explanationPages": 5,
+      "flashcardCount": 12,
+      "questionCount": 10,
+      "lastUpdated": "2025-10-22"
+    },
+    "mgmt-1-1-1": {
+      "status": "completed",
+      "title": "プロジェクトマネジメントの基礎",
+      "explanationPages": 5,
+      "flashcardCount": 12,
+      "questionCount": 10,
+      "lastUpdated": "2025-10-22"
+    },
+    "mgmt-1-1-2": {
+      "status": "completed",
+      "title": "プロジェクト統合マネジメント",
+      "explanationPages": 5,
+      "flashcardCount": 12,
+      "questionCount": 10,
+      "lastUpdated": "2025-10-22"
+    },
+    "mgmt-1-1-3": {
+      "status": "completed",
+      "title": "スケジュール管理",
+      "explanationPages": 5,
+      "flashcardCount": 12,
+      "questionCount": 10,
+      "lastUpdated": "2025-10-22"
+    },
+    "mgmt-1-1-4": {
+      "status": "completed",
+      "title": "コスト管理",
+      "explanationPages": 5,
+      "flashcardCount": 12,
+      "questionCount": 10,
+      "lastUpdated": "2025-10-22"
+    },
+    "mgmt-1-1-5": {
+      "status": "completed",
+      "title": "品質管理",
+      "explanationPages": 5,
+      "flashcardCount": 12,
+      "questionCount": 10,
+      "lastUpdated": "2025-10-22"
+    },
+    "mgmt-2-1-1": {
+      "status": "completed",
+      "title": "サービスマネジメントの基礎",
+      "explanationPages": 5,
+      "flashcardCount": 12,
+      "questionCount": 10,
+      "lastUpdated": "2025-10-22"
+    },
+    "mgmt-2-1-2": {
+      "status": "completed",
+      "title": "サービスサポート",
+      "explanationPages": 5,
+      "flashcardCount": 12,
+      "questionCount": 10,
+      "lastUpdated": "2025-10-22"
+    },
+    "mgmt-2-1-3": {
+      "status": "completed",
+      "title": "サービスデリバリ",
+      "explanationPages": 5,
+      "flashcardCount": 12,
+      "questionCount": 10,
+      "lastUpdated": "2025-10-22"
+    },
+    "mgmt-2-1-4": {
+      "status": "completed",
+      "title": "システム運用",
+      "explanationPages": 5,
+      "flashcardCount": 12,
+      "questionCount": 10,
+      "lastUpdated": "2025-10-22"
+    },
+    "mgmt-2-1-5": {
+      "status": "completed",
+      "title": "事業継続計画",
+      "explanationPages": 5,
+      "flashcardCount": 12,
+      "questionCount": 10,
+      "lastUpdated": "2025-10-22"
+    },
+    "mgmt-2-2-1": {
+      "status": "not_created",
+      "title": "システム監査の基礎",
+      "explanationPages": 0,
+      "flashcardCount": 0,
+      "questionCount": 0,
+      "lastUpdated": "2025-10-21"
+    },
+    "mgmt-2-2-2": {
+      "status": "not_created",
+      "title": "監査の実施",
+      "explanationPages": 0,
+      "flashcardCount": 0,
+      "questionCount": 0,
+      "lastUpdated": "2025-10-21"
+    },
+    "strat-1-1-1": {
+      "status": "not_created",
+      "title": "情報システム戦略",
+      "explanationPages": 0,
+      "flashcardCount": 0,
+      "questionCount": 0,
+      "lastUpdated": "2025-10-21"
+    },
+    "strat-1-1-2": {
+      "status": "not_created",
+      "title": "業務プロセス",
+      "explanationPages": 0,
+      "flashcardCount": 0,
+      "questionCount": 0,
+      "lastUpdated": "2025-10-21"
+    },
+    "strat-1-1-3": {
+      "status": "not_created",
+      "title": "ソリューションビジネス",
+      "explanationPages": 0,
+      "flashcardCount": 0,
+      "questionCount": 0,
+      "lastUpdated": "2025-10-21"
+    },
+    "strat-1-1-4": {
+      "status": "not_created",
+      "title": "システム活用促進",
+      "explanationPages": 0,
+      "flashcardCount": 0,
+      "questionCount": 0,
+      "lastUpdated": "2025-10-21"
+    },
+    "strat-1-2-1": {
+      "status": "not_created",
+      "title": "システム化計画",
+      "explanationPages": 0,
+      "flashcardCount": 0,
+      "questionCount": 0,
+      "lastUpdated": "2025-10-21"
+    },
+    "strat-1-2-2": {
+      "status": "not_created",
+      "title": "要件定義",
+      "explanationPages": 0,
+      "flashcardCount": 0,
+      "questionCount": 0,
+      "lastUpdated": "2025-10-21"
+    },
+    "strat-2-1-1": {
+      "status": "not_created",
+      "title": "経営戦略手法",
+      "explanationPages": 0,
+      "flashcardCount": 0,
+      "questionCount": 0,
+      "lastUpdated": "2025-10-21"
+    },
+    "strat-2-1-2": {
+      "status": "not_created",
+      "title": "マーケティング",
+      "explanationPages": 0,
+      "flashcardCount": 0,
+      "questionCount": 0,
+      "lastUpdated": "2025-10-21"
+    },
+    "strat-2-1-3": {
+      "status": "not_created",
+      "title": "ビジネス戦略",
+      "explanationPages": 0,
+      "flashcardCount": 0,
+      "questionCount": 0,
+      "lastUpdated": "2025-10-21"
+    },
+    "strat-2-2-1": {
+      "status": "not_created",
+      "title": "技術開発戦略",
+      "explanationPages": 0,
+      "flashcardCount": 0,
+      "questionCount": 0,
+      "lastUpdated": "2025-10-21"
+    },
+    "strat-2-3-1": {
+      "status": "not_created",
+      "title": "電子商取引",
+      "explanationPages": 0,
+      "flashcardCount": 0,
+      "questionCount": 0,
+      "lastUpdated": "2025-10-21"
+    },
+    "strat-2-3-2": {
+      "status": "not_created",
+      "title": "民生機器と産業機器",
+      "explanationPages": 0,
+      "flashcardCount": 0,
+      "questionCount": 0,
+      "lastUpdated": "2025-10-21"
+    },
+    "strat-3-1-1": {
+      "status": "not_created",
+      "title": "経営組織",
+      "explanationPages": 0,
+      "flashcardCount": 0,
+      "questionCount": 0,
+      "lastUpdated": "2025-10-21"
+    },
+    "strat-3-1-2": {
+      "status": "not_created",
+      "title": "業務分析と改善",
+      "explanationPages": 0,
+      "flashcardCount": 0,
+      "questionCount": 0,
+      "lastUpdated": "2025-10-21"
+    },
+    "strat-3-1-3": {
+      "status": "not_created",
+      "title": "OR・IE",
+      "explanationPages": 0,
+      "flashcardCount": 0,
+      "questionCount": 0,
+      "lastUpdated": "2025-10-21"
+    },
+    "strat-3-2-1": {
+      "status": "not_created",
+      "title": "財務会計",
+      "explanationPages": 0,
+      "flashcardCount": 0,
+      "questionCount": 0,
+      "lastUpdated": "2025-10-21"
+    },
+    "strat-3-2-2": {
+      "status": "not_created",
+      "title": "管理会計",
+      "explanationPages": 0,
+      "flashcardCount": 0,
+      "questionCount": 0,
+      "lastUpdated": "2025-10-21"
+    },
+    "strat-3-3-1": {
+      "status": "not_created",
+      "title": "知的財産権",
+      "explanationPages": 0,
+      "flashcardCount": 0,
+      "questionCount": 0,
+      "lastUpdated": "2025-10-21"
+    },
+    "strat-3-3-2": {
+      "status": "not_created",
+      "title": "セキュリティ関連法規",
+      "explanationPages": 0,
+      "flashcardCount": 0,
+      "questionCount": 0,
+      "lastUpdated": "2025-10-21"
+    },
+    "strat-3-3-3": {
+      "status": "not_created",
+      "title": "労働関連法規",
+      "explanationPages": 0,
+      "flashcardCount": 0,
+      "questionCount": 0,
+      "lastUpdated": "2025-10-21"
+    },
+    "strat-3-3-4": {
+      "status": "not_created",
+      "title": "取引関連法規",
+      "explanationPages": 0,
+      "flashcardCount": 0,
+      "questionCount": 0,
+      "lastUpdated": "2025-10-21"
+    },
+    "strat-3-3-5": {
+      "status": "not_created",
+      "title": "その他の法規・ガイドライン",
+      "explanationPages": 0,
+      "flashcardCount": 0,
+      "questionCount": 0,
+      "lastUpdated": "2025-10-21"
+    },
+    "strat-3-4-1": {
+      "status": "not_created",
+      "title": "標準化",
+      "explanationPages": 0,
+      "flashcardCount": 0,
+      "questionCount": 0,
+      "lastUpdated": "2025-10-21"
+    }
+  },
+  "summary": {
+    "total": 94,
+    "completed": 58,
+    "comingSoon": 0,
+    "notCreated": 36
+  }
+}

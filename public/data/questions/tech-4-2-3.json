@@ -1,0 +1,136 @@
+{
+  "topicId": "tech-4-2-3",
+  "title": "オブジェクト指向",
+  "questions": [
+    {
+      "id": "tech-4-2-3-q1",
+      "type": "multiple_choice",
+      "question": "「Carクラスを定義し、satoCar というインスタンスを生成した」という場合、CarクラスとsatoCar の関係として正しいものはどれですか？",
+      "options": [
+        "Carクラスは設計図、satoCar は設計図を基に作られた実体（オブジェクト）",
+        "Carクラスは実体（オブジェクト）、satoCar は設計図",
+        "Carクラスと satoCar は同じもので、名前が違うだけ",
+        "Carクラスは親クラス、satoCar は子クラス"
+      ],
+      "correctAnswer": 0,
+      "explanation": "「Carクラスは設計図、satoCar は設計図を基に作られた実体（オブジェクト）」が正しいです。クラス（Class）はオブジェクトの設計図（テンプレート）であり、属性（color、speed など）とメソッド（accelerate、brake など）を定義します。インスタンス（Instance）はクラスを基に生成された実体（オブジェクト）で、クラスが「設計図」であり、インスタンスが「設計図を基に作られた製品」に相当します。例えば、Carクラスから satoCar（佐藤さんの車）、tanakaCar（田中さんの車）という複数のインスタンスを生成できます。選択肢②③④はクラスとインスタンスの関係を正しく表していません。"
+    },
+    {
+      "id": "tech-4-2-3-q2",
+      "type": "multiple_choice",
+      "question": "次のJavaコードで、balance を private にする目的として正しいものはどれですか？\n\n```java\npublic class BankAccount {\n    private int balance;  // 残高\n    \n    public void deposit(int amount) {\n        if (amount > 0) {\n            balance += amount;\n        }\n    }\n    \n    public void withdraw(int amount) {\n        if (amount > 0 && amount <= balance) {\n            balance -= amount;\n        }\n    }\n}\n```",
+      "options": [
+        "外部から balance を直接変更できないようにし、deposit と withdraw メソッド経由でのみ変更可能にして、不正な操作（残高がマイナスになる）を防ぐため",
+        "balance の値を外部から読み取りできないようにするため（セキュリティ向上）",
+        "balance の処理速度を向上させるため",
+        "balance をメモリに保存しないようにするため"
+      ],
+      "correctAnswer": 0,
+      "explanation": "「外部から balance を直接変更できないようにし、deposit と withdraw メソッド経由でのみ変更可能にして、不正な操作（残高がマイナスになる）を防ぐため」が正しいです。これがカプセル化（Encapsulation）の目的です。balance を private にすることで、外部から直接アクセス（例: account.balance = -5000;）できなくなり、deposit と withdraw メソッド（public）経由でのみ変更可能になります。メソッド内で入力値をチェック（if (amount > 0 && amount <= balance)）することで、不正な操作（残高がマイナスになる、負の金額を預金する）を防ぐことができます。カプセル化により、データの保護、変更の影響範囲の限定、インターフェースの明確化が実現されます。選択肢②③④はカプセル化の目的ではありません。"
+    },
+    {
+      "id": "tech-4-2-3-q3",
+      "type": "multiple_choice",
+      "question": "次の4つのアクセス修飾子のうち、「クラス内部のみアクセス可能」なものはどれですか？",
+      "options": [
+        "public",
+        "private",
+        "protected",
+        "（なし、package-private）"
+      ],
+      "correctAnswer": 1,
+      "explanation": "「private」が正しいです。private はクラス内部のみアクセス可能なアクセス修飾子です。private を指定した属性やメソッドは、同じクラス内からのみアクセスでき、外部クラス、サブクラス、同じパッケージのクラスからもアクセスできません。カプセル化を実現するために、通常、属性は private にし、公開メソッド（getter/setter）を通じてのみアクセスできるようにします。選択肢①public はどこからでもアクセス可能、③protected は同じパッケージとサブクラスからアクセス可能、④（なし）は同じパッケージ内からアクセス可能です。"
+    },
+    {
+      "id": "tech-4-2-3-q4",
+      "type": "multiple_choice",
+      "question": "Dog クラスと Cat クラスに共通する属性（name）とメソッド（eat、sleep）を抽出して、親クラス Animal を作成しました。この作業を何と呼びますか？",
+      "options": [
+        "汎化（Generalization）",
+        "特化（Specialization）",
+        "カプセル化（Encapsulation）",
+        "ポリモーフィズム（Polymorphism）"
+      ],
+      "correctAnswer": 0,
+      "explanation": "「汎化（Generalization）」が正しいです。汎化とは、複数のクラス（Dog、Cat）から共通部分（属性: name、メソッド: eat、sleep）を抽出して親クラス（Animal）を作成することです。汎化により、コードの重複を削減し、共通の処理を1か所にまとめることができます。対義語は「特化（Specialization）」で、親クラス（Animal）を継承して、子クラス（Dog）に固有の属性やメソッド（例: bark メソッド）を追加することを指します。選択肢③カプセル化はデータと処理をまとめて隠蔽すること、④ポリモーフィズムは同じメソッド名でも型によって異なる処理が実行されることを指します。"
+    },
+    {
+      "id": "tech-4-2-3-q5",
+      "type": "multiple_choice",
+      "question": "次のコードで、Dog クラスの eat メソッドが Animal クラスの eat メソッドと異なる処理を実行しています。この仕組みを何と呼びますか？\n\n```java\npublic class Animal {\n    public void eat() {\n        System.out.println(\"食べています。\");\n    }\n}\n\npublic class Dog extends Animal {\n    @Override\n    public void eat() {\n        System.out.println(\"ドッグフードを食べています。\");\n    }\n}\n```",
+      "options": [
+        "オーバーライド（Override）",
+        "オーバーロード（Overload）",
+        "カプセル化（Encapsulation）",
+        "集約（Aggregation）"
+      ],
+      "correctAnswer": 0,
+      "explanation": "「オーバーライド（Override）」が正しいです。オーバーライドとは、子クラス（Dog）で親クラス（Animal）のメソッド（eat）を再定義することです。Dog クラスの eat メソッドに @Override アノテーションを付けることで、親クラスのメソッドを上書きしていることを明示します。dog.eat() を呼び出すと、Dog クラスで再定義された eat メソッドが呼ばれ、「ドッグフードを食べています。」と出力されます。オーバーライドにより、子クラスで親クラスのメソッドの振る舞いを変更できます。選択肢②オーバーロードは同じクラス内で同じメソッド名で引数が異なるメソッドを複数定義すること、③カプセル化はデータと処理をまとめて隠蔽すること、④集約は複数のオブジェクトを組み合わせることを指します。"
+    },
+    {
+      "id": "tech-4-2-3-q6",
+      "type": "multiple_choice",
+      "question": "次のコードで、Animal 型の変数 animal1 に Dog のインスタンスを代入し、animal1.makeSound() を呼び出すと、「ワンワン」と出力されます。この仕組みを何と呼びますか？\n\n```java\nAnimal animal1 = new Dog();\nanimal1.name = \"ポチ\";\nanimal1.makeSound();  // 出力: ポチがワンワン鳴いています。\n```",
+      "options": [
+        "ポリモーフィズム（Polymorphism）",
+        "カプセル化（Encapsulation）",
+        "継承（Inheritance）",
+        "集約（Aggregation）"
+      ],
+      "correctAnswer": 0,
+      "explanation": "「ポリモーフィズム（Polymorphism）」が正しいです。ポリモーフィズム（多態性）とは、「同じメソッド名でも、オブジェクトの型によって異なる処理が実行される」という性質です。このコードでは、Animal 型の変数 animal1 に Dog のインスタンスを代入しています（アップキャスト）。animal1.makeSound() を呼び出すと、変数の宣言型（Animal）ではなく、実際のオブジェクトの型（Dog）に応じたメソッドが呼ばれます（動的束縛）。その結果、Dog クラスで定義された makeSound メソッドが実行され、「ポチがワンワン鳴いています。」と出力されます。ポリモーフィズムにより、異なるクラスのオブジェクトを統一的に扱うことができます。選択肢②③④はこの仕組みを表していません。"
+    },
+    {
+      "id": "tech-4-2-3-q7",
+      "type": "multiple_choice",
+      "question": "ポリモーフィズムの利点として正しいものはどれですか？",
+      "options": [
+        "新しいクラス（例: Bird）を追加しても、既存のコード（for ループで animal.makeSound() を呼ぶ部分）を変更せずに対応できる（拡張性が高い）",
+        "プログラムの実行速度が向上する",
+        "メモリ使用量が削減される",
+        "データベースへのアクセスが高速化される"
+      ],
+      "correctAnswer": 0,
+      "explanation": "「新しいクラス（例: Bird）を追加しても、既存のコード（for ループで animal.makeSound() を呼ぶ部分）を変更せずに対応できる（拡張性が高い）」が正しいです。ポリモーフィズムの主な利点は、①拡張性：新しい動物クラス（Bird）を追加しても、既存のコード（for (Animal animal : animals) { animal.makeSound(); }）を変更せずに対応できる、②統一的な処理：異なるクラス（Dog、Cat、Bird）のオブジェクトを同じインターフェース（makeSound メソッド）で扱える、③コードの簡潔化：if-else で型を判定する必要がない、の3つです。例えば、Animal[] animals = {new Dog(), new Cat(), new Bird()}; として、for ループで animals を回して animal.makeSound() を呼び出すだけで、各動物の鳴き声が出力されます。選択肢②③④はポリモーフィズムの直接的な利点ではありません。"
+    },
+    {
+      "id": "tech-4-2-3-q8",
+      "type": "multiple_choice",
+      "question": "次のコードで、Car クラスと Engine クラスの関係として正しいものはどれですか？\n\n```java\npublic class Car {\n    private Engine engine;\n    \n    public Car() {\n        engine = new Engine();  // Car のコンストラクタで Engine を生成\n    }\n}\n```",
+      "options": [
+        "コンポジション（Composition、強い集約）。Car が削除されると Engine も削除される。",
+        "アグリゲーション（Aggregation、弱い集約）。Car が削除されても Engine は残る。",
+        "継承（Inheritance）。Engine は Car の子クラス。",
+        "ポリモーフィズム（Polymorphism）。Car と Engine は同じインターフェースを実装。"
+      ],
+      "correctAnswer": 0,
+      "explanation": "「コンポジション（Composition、強い集約）。Car が削除されると Engine も削除される。」が正しいです。コンポジションとは、部品（Engine）が全体（Car）に強く依存する集約の形態です。このコードでは、Car のコンストラクタ内で Engine を生成（engine = new Engine();）しているため、Engine は Car に強く依存しています。Car のインスタンスが削除されると、その Car が持つ Engine も削除されます（強い依存関係）。対して、アグリゲーション（弱い集約）は、部品が全体に弱く依存する関係で、例えば Car と Driver の関係です。Driver は外部で生成され、Car に設定される（car.setDriver(driver);）ため、Car が削除されても Driver は残ります。選択肢③④は集約の関係ではありません。"
+    },
+    {
+      "id": "tech-4-2-3-q9",
+      "type": "multiple_choice",
+      "question": "抽象クラス（Abstract Class）とインターフェース（Interface）の違いとして正しいものはどれですか？",
+      "options": [
+        "抽象クラスは一部の実装を持てる、インターフェースは実装を持たない（抽象メソッドのみ）",
+        "抽象クラスは実装を持たない、インターフェースは一部の実装を持てる",
+        "抽象クラスとインターフェースは同じもので、名前が違うだけ",
+        "抽象クラスは多重継承可能、インターフェースは単一継承のみ"
+      ],
+      "correctAnswer": 0,
+      "explanation": "「抽象クラスは一部の実装を持てる、インターフェースは実装を持たない（抽象メソッドのみ）」が正しいです。抽象クラス（Abstract Class）は、インスタンスを生成できないクラスで、一部のメソッドを実装し、一部のメソッドを抽象メソッド（abstract）として子クラスで実装を強制することができます。例: abstract class Animal { abstract void makeSound(); public void eat() { ... } }。インターフェース（Interface）は、抽象メソッドのみを定義する「契約」で、実装を持ちません（Java 8以降はデフォルトメソッドで一部実装可能）。例: interface Flyable { void fly(); }。違いとして、①抽象クラスは一部の実装を持てる、単一継承のみ、②インターフェースは実装を持たない、多重実装可能、が挙げられます。選択肢②③④は間違いです。"
+    },
+    {
+      "id": "tech-4-2-3-q10",
+      "type": "multiple_choice",
+      "question": "次のコードで、コンストラクタ（Constructor）の役割として正しいものはどれですか？\n\n```java\npublic class Car {\n    private String color;\n    \n    public Car(String color) {  // コンストラクタ\n        this.color = color;\n    }\n}\n\nCar car = new Car(\"赤\");  // インスタンス生成\n```",
+      "options": [
+        "インスタンス生成時に自動的に呼ばれ、属性の初期値を設定する",
+        "インスタンスを削除する",
+        "クラスの定義を変更する",
+        "メソッドを呼び出す"
+      ],
+      "correctAnswer": 0,
+      "explanation": "「インスタンス生成時に自動的に呼ばれ、属性の初期値を設定する」が正しいです。コンストラクタ（Constructor）は、インスタンス生成時（new Car(\"赤\")）に自動的に呼ばれる特殊なメソッドです。コンストラクタの役割は、①属性の初期値を設定（this.color = color;）、②必要な準備処理を実行、の2つです。コンストラクタの特徴は、①クラス名と同じ名前、②戻り値なし、③new 演算子でインスタンス生成時に自動的に呼ばれる、の3つです。このコードでは、new Car(\"赤\") でインスタンスを生成すると、コンストラクタ Car(String color) が呼ばれ、color 属性に \"赤\" が設定されます。選択肢②③④はコンストラクタの役割ではありません（②はガベージコレクションの役割、③④は該当なし）。"
+    }
+  ]
+}
