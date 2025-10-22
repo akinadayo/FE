@@ -7,6 +7,8 @@ export const metadata: Metadata = {
   description: "基本情報技術者試験対策",
 };
 
+export const dynamic = 'force-dynamic';
+
 export default function RootLayout({
   children,
 }: Readonly<{
