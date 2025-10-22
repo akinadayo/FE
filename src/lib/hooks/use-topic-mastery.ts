@@ -29,6 +29,8 @@ export function useTopicMastery(userId: string | undefined, topicId: string | un
       return;
     }
 
+    const safeTopicId = topicId; // Type narrowing
+
     async function fetchMastery() {
       setLoading(true);
       try {
@@ -38,7 +40,7 @@ export function useTopicMastery(userId: string | undefined, topicId: string | un
           .from('topic_progress')
           .select('*')
           .eq('user_id', userId)
-          .eq('topic_id', topicId)
+          .eq('topic_id', safeTopicId)
           .single();
 
         if (error && error.code !== 'PGRST116') {
@@ -51,7 +53,7 @@ export function useTopicMastery(userId: string | undefined, topicId: string | un
           const tier = getMasteryTier(totalCompletions);
 
           setMastery({
-            topicId,
+            topicId: safeTopicId,
             masteryLevel,
             totalCompletions,
             tier,
@@ -61,7 +63,7 @@ export function useTopicMastery(userId: string | undefined, topicId: string | un
         } else {
           // No progress yet
           setMastery({
-            topicId,
+            topicId: safeTopicId,
             masteryLevel: 0,
             totalCompletions: 0,
             tier: getMasteryTier(0),
