@@ -128,7 +128,7 @@ const convertMarkdown = (text: string) => {
   html = html.replace(/\^([0-9a-zA-Z])/g, '<sup>$1</sup>');
 
   // Convert $$ formula $$ to formatted block
-  html = html.replace(/\$\$(.*?)\$\$/gs, '<div class="my-2 p-2 bg-gray-100 dark:bg-gray-800 rounded font-mono text-sm">$1</div>');
+  html = html.replace(/\$\$([\s\S]*?)\$\$/g, '<div class="my-2 p-2 bg-gray-100 dark:bg-gray-800 rounded font-mono text-sm">$1</div>');
 
   // Convert inline $ formula $ to inline code
   html = html.replace(/\$([^\$]+?)\$/g, '<code class="px-1 py-0.5 bg-gray-100 dark:bg-gray-800 rounded text-xs">$1</code>');

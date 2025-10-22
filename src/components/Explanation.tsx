@@ -273,7 +273,7 @@ export function Explanation({ onNavigate, unitData }: ExplanationProps) {
           <p
             key={index}
             className="text-base leading-relaxed whitespace-pre-line"
-            dangerouslySetInnerHTML={{ __html: convertMarkdown(section.content) }}
+            dangerouslySetInnerHTML={{ __html: convertMarkdown(section.content || '') }}
           />
         );
 
@@ -286,7 +286,7 @@ export function Explanation({ onNavigate, unitData }: ExplanationProps) {
                 {section.title && <p className="font-medium mb-1">{section.title}</p>}
                 <p
                   className="text-sm whitespace-pre-line"
-                  dangerouslySetInnerHTML={{ __html: convertMarkdown(section.content) }}
+                  dangerouslySetInnerHTML={{ __html: convertMarkdown(section.content || '') }}
                 />
               </div>
             </div>
