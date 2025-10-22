@@ -196,14 +196,16 @@ export function useGoals(userId: string | undefined) {
       setExamDateState(date);
 
       // Trigger notification
-      await supabase.rpc('create_notification', {
-        p_user_id: userId,
-        p_type: 'goal_set',
-        p_title: '試験日を設定しました',
-        p_message: `試験日: ${date.toLocaleDateString('ja-JP')}`,
-      }).catch(() => {
+      try {
+        await supabase.rpc('create_notification', {
+          p_user_id: userId,
+          p_type: 'goal_set',
+          p_title: '試験日を設定しました',
+          p_message: `試験日: ${date.toLocaleDateString('ja-JP')}`,
+        });
+      } catch {
         // Silently fail if notification creation fails
-      });
+      }
     } catch (error) {
       console.error('Error setting exam date:', error);
     }
@@ -223,14 +225,16 @@ export function useGoals(userId: string | undefined) {
       setWeeklyGoalState(minutes);
 
       // Trigger notification
-      await supabase.rpc('create_notification', {
-        p_user_id: userId,
-        p_type: 'goal_set',
-        p_title: '週間目標を設定しました',
-        p_message: `目標: ${Math.floor(minutes / 60)}時間${minutes % 60}分`,
-      }).catch(() => {
+      try {
+        await supabase.rpc('create_notification', {
+          p_user_id: userId,
+          p_type: 'goal_set',
+          p_title: '週間目標を設定しました',
+          p_message: `目標: ${Math.floor(minutes / 60)}時間${minutes % 60}分`,
+        });
+      } catch {
         // Silently fail if notification creation fails
-      });
+      }
     } catch (error) {
       console.error('Error setting weekly goal:', error);
     }
@@ -250,14 +254,16 @@ export function useGoals(userId: string | undefined) {
       setMonthlyGoalState(minutes);
 
       // Trigger notification
-      await supabase.rpc('create_notification', {
-        p_user_id: userId,
-        p_type: 'goal_set',
-        p_title: '月間目標を設定しました',
-        p_message: `目標: ${Math.floor(minutes / 60)}時間${minutes % 60}分`,
-      }).catch(() => {
+      try {
+        await supabase.rpc('create_notification', {
+          p_user_id: userId,
+          p_type: 'goal_set',
+          p_title: '月間目標を設定しました',
+          p_message: `目標: ${Math.floor(minutes / 60)}時間${minutes % 60}分`,
+        });
+      } catch {
         // Silently fail if notification creation fails
-      });
+      }
     } catch (error) {
       console.error('Error setting monthly goal:', error);
     }
