@@ -115,17 +115,47 @@ export function AppWrapper() {
   };
 
   const goBack = () => {
+    // Hierarchical navigation based on IA design
     setNavigation(prev => {
-      const newHistory = [...prev.history];
-      const previous = newHistory.pop();
-      if (previous) {
-        return {
-          screen: previous.screen,
-          data: previous.data,
-          history: newHistory
-        };
+      let parentScreen: Screen = 'home';
+      let parentData: Record<string, unknown> | undefined;
+
+      switch (prev.screen) {
+        case 'explanation':
+        case 'flashcard':
+        case 'test':
+          // These screens go back to unitDetail
+          parentScreen = 'unitDetail';
+          parentData = prev.data; // Keep the same topicId
+          break;
+        case 'testResult':
+          // Test result goes back to unitDetail (not test)
+          parentScreen = 'unitDetail';
+          parentData = prev.data; // Keep the same topicId
+          break;
+        case 'unitDetail':
+          // Unit detail goes back to learning
+          parentScreen = 'learning';
+          parentData = undefined;
+          break;
+        case 'settings':
+        case 'notifications':
+        case 'achievements':
+          // These go back to home
+          parentScreen = 'home';
+          parentData = undefined;
+          break;
+        default:
+          // Fallback to home
+          parentScreen = 'home';
+          parentData = undefined;
       }
-      return prev;
+
+      return {
+        screen: parentScreen,
+        data: parentData,
+        history: [] // Clear history when using hierarchical navigation
+      };
     });
   };
 
