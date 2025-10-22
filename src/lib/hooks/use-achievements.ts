@@ -192,7 +192,7 @@ function calculateStreak(dates: string[]): number {
   const today = new Date().toISOString().split('T')[0];
 
   let streak = 0;
-  let currentDate = new Date(today);
+  const currentDate = new Date(today);
 
   for (const dateStr of uniqueDates) {
     const date = new Date(dateStr);
