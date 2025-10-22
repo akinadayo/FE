@@ -52,7 +52,7 @@ export function useHeatmapData(userId: string | undefined, days: number = 365) {
         const heatmapData: HeatmapData[] = [];
 
         // すべての日付を生成
-        const currentDate = new Date(startDate);
+        let currentDate = new Date(startDate);
         while (currentDate <= endDate) {
           const dateStr = currentDate.toISOString().split('T')[0];
           const minutes = dailyData.get(dateStr) || 0;
