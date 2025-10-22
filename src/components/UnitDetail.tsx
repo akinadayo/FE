@@ -4,11 +4,11 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
-import { BookOpen, RotateCw, PenLine, Star, Target, Trophy } from "lucide-react";
+import { BookOpen, RotateCw, PenLine, Star, Target, Trophy, ArrowRight } from "lucide-react";
 import { useAuth } from "@/lib/contexts/auth-context";
 import { useTopicProgress } from "@/lib/hooks/use-topic-progress";
 import { useTopicMastery } from "@/lib/hooks/use-topic-mastery";
-import { getTopicById, getTopicPath } from "@/lib/syllabus";
+import { getTopicById, getTopicPath, getNextTopic } from "@/lib/syllabus";
 
 interface UnitDetailProps {
   onNavigate: (screen: string, data?: Record<string, unknown>) => void;
@@ -37,6 +37,7 @@ export function UnitDetail({ onNavigate, unitData }: UnitDetailProps) {
   const topicPath = getTopicPath(unitData.topicId);
   const progress = getProgress(unitData.topicId);
   const progressPercentage = getProgressPercentage(unitData.topicId);
+  const nextTopic = getNextTopic(unitData.topicId);
 
   if (!topic) {
     return (
@@ -322,6 +323,25 @@ export function UnitDetail({ onNavigate, unitData }: UnitDetailProps) {
           ))}
         </div>
       </Card>
+
+      {/* Next Topic - Only show when all learning is completed */}
+      {explanationCompleted && flashcardCompleted && testScore !== null && testScore !== undefined && testScore >= 70 && nextTopic && (
+        <Card className="p-6 text-center bg-gradient-to-br from-green-50 to-emerald-50 border-green-200 border-2 shadow-lg">
+          <div className="text-5xl mb-3">🎉</div>
+          <h3 className="text-xl mb-2 font-bold">この単元をマスターしました！</h3>
+          <p className="text-sm text-muted-foreground mb-4">
+            解説・練習問題・テストを全てクリアしました。<br />次の単元に進む準備ができています。
+          </p>
+          <Button
+            onClick={() => onNavigate('unitDetail', { topicId: nextTopic.id })}
+            className="bg-green-600 hover:bg-green-700 text-white"
+            size="lg"
+          >
+            <ArrowRight className="w-4 h-4 mr-2" />
+            次の単元へ: {nextTopic.タイトル}
+          </Button>
+        </Card>
+      )}
     </div>
   );
 }

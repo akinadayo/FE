@@ -218,20 +218,6 @@ export function TestResult({ onNavigate, resultData }: TestResultProps) {
           単元詳細に戻る
         </Button>
       </div>
-
-      {/* Passed Celebration */}
-      {passed && (
-        <Card className="p-6 text-center bg-gradient-to-br from-green-50 to-emerald-50 border-green-200">
-          <div className="text-5xl mb-3">🏆</div>
-          <h3 className="text-xl mb-2">この単元をマスターしました！</h3>
-          <p className="text-sm text-muted-foreground mb-4">
-            次の単元に進む準備ができました
-          </p>
-          <Button onClick={() => onNavigate('learning')} className="bg-green-600 hover:bg-green-700">
-            次の単元へ
-          </Button>
-        </Card>
-      )}
     </div>
   );
 }
