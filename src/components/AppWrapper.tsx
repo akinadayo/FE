@@ -82,13 +82,11 @@ export function AppWrapper() {
   });
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // Temporary: Skip auth check for testing
-  // TODO: Re-enable authentication after fixing Supabase setup
-  // useEffect(() => {
-  //   if (!loading && !user) {
-  //     window.location.href = '/login';
-  //   }
-  // }, [user, loading]);
+  // Redirect to login if not authenticated
+  if (!loading && !user) {
+    window.location.href = '/login';
+    return null;
+  }
 
   // Show loading state while checking auth
   if (loading) {
