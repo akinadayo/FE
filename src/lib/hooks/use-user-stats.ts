@@ -77,7 +77,7 @@ export function useUserStats(userId: string | undefined) {
     return () => {
       supabase.removeChannel(channel);
     };
-  }, [userId]);
+  }, [userId, supabase]);
 
   return { stats, todayMinutes, loading };
 }

@@ -1,0 +1,1082 @@
+{
+  "highQuality": [
+    "tech-1-1-2",
+    "tech-1-2-1",
+    "tech-1-3-1",
+    "tech-1-4-1",
+    "tech-1-4-2",
+    "tech-2-1-2",
+    "tech-2-1-3",
+    "tech-2-2-3",
+    "tech-2-3-1",
+    "tech-2-3-4",
+    "tech-2-3-5",
+    "tech-2-3-6"
+  ],
+  "needsRecreation": [
+    {
+      "topicId": "mgmt-1-1-1",
+      "issues": {
+        "explanation": [
+          "内容が極端に薄い（平均29文字/セクション）"
+        ],
+        "flashcard": [],
+        "questions": [
+          "抽象的な問題が多い（具体的なシナリオが不足）"
+        ]
+      }
+    },
+    {
+      "topicId": "mgmt-1-1-2",
+      "issues": {
+        "explanation": [
+          "内容が極端に薄い（平均28文字/セクション）"
+        ],
+        "flashcard": [
+          "内容が薄い（front平均22文字、back平均29文字）"
+        ],
+        "questions": [
+          "問題数が3問のみ（5-10問あるべき）"
+        ]
+      }
+    },
+    {
+      "topicId": "mgmt-1-1-3",
+      "issues": {
+        "explanation": [
+          "内容が極端に薄い（平均27文字/セクション）"
+        ],
+        "flashcard": [
+          "内容が薄い（front平均23文字、back平均29文字）"
+        ],
+        "questions": [
+          "抽象的な問題が多い（具体的なシナリオが不足）"
+        ]
+      }
+    },
+    {
+      "topicId": "mgmt-1-1-4",
+      "issues": {
+        "explanation": [
+          "内容が極端に薄い（平均27文字/セクション）"
+        ],
+        "flashcard": [
+          "内容が薄い（front平均23文字、back平均26文字）"
+        ],
+        "questions": [
+          "抽象的な問題が多い（具体的なシナリオが不足）"
+        ]
+      }
+    },
+    {
+      "topicId": "mgmt-1-1-5",
+      "issues": {
+        "explanation": [
+          "内容が極端に薄い（平均20文字/セクション）"
+        ],
+        "flashcard": [
+          "内容が薄い（front平均16文字、back平均18文字）"
+        ],
+        "questions": [
+          "抽象的な問題が多い（具体的なシナリオが不足）"
+        ]
+      }
+    },
+    {
+      "topicId": "mgmt-2-1-1",
+      "issues": {
+        "explanation": [
+          "内容が極端に薄い（平均32文字/セクション）"
+        ],
+        "flashcard": [],
+        "questions": [
+          "抽象的な問題が多い（具体的なシナリオが不足）"
+        ]
+      }
+    },
+    {
+      "topicId": "mgmt-2-1-2",
+      "issues": {
+        "explanation": [
+          "内容が極端に薄い（平均23文字/セクション）"
+        ],
+        "flashcard": [
+          "内容が薄い（front平均18文字、back平均23文字）"
+        ],
+        "questions": [
+          "抽象的な問題が多い（具体的なシナリオが不足）"
+        ]
+      }
+    },
+    {
+      "topicId": "mgmt-2-1-3",
+      "issues": {
+        "explanation": [
+          "内容が極端に薄い（平均25文字/セクション）"
+        ],
+        "flashcard": [
+          "内容が薄い（front平均21文字、back平均27文字）"
+        ],
+        "questions": [
+          "抽象的な問題が多い（具体的なシナリオが不足）"
+        ]
+      }
+    },
+    {
+      "topicId": "mgmt-2-1-4",
+      "issues": {
+        "explanation": [
+          "内容が極端に薄い（平均27文字/セクション）"
+        ],
+        "flashcard": [
+          "内容が薄い（front平均22文字、back平均26文字）"
+        ],
+        "questions": [
+          "抽象的な問題が多い（具体的なシナリオが不足）"
+        ]
+      }
+    },
+    {
+      "topicId": "mgmt-2-1-5",
+      "issues": {
+        "explanation": [
+          "内容が極端に薄い（平均32文字/セクション）"
+        ],
+        "flashcard": [],
+        "questions": [
+          "抽象的な問題が多い（具体的なシナリオが不足）"
+        ]
+      }
+    },
+    {
+      "topicId": "mgmt-2-2-1",
+      "issues": {
+        "explanation": [
+          "内容が極端に薄い（平均24文字/セクション）"
+        ],
+        "flashcard": [
+          "内容が薄い（front平均18文字、back平均25文字）"
+        ],
+        "questions": [
+          "抽象的な問題が多い（具体的なシナリオが不足）"
+        ]
+      }
+    },
+    {
+      "topicId": "mgmt-2-2-2",
+      "issues": {
+        "explanation": [
+          "内容が極端に薄い（平均20文字/セクション）"
+        ],
+        "flashcard": [
+          "内容が薄い（front平均17文字、back平均19文字）"
+        ],
+        "questions": [
+          "抽象的な問題が多い（具体的なシナリオが不足）"
+        ]
+      }
+    },
+    {
+      "topicId": "strat-1-1-1",
+      "issues": {
+        "explanation": [
+          "内容が極端に薄い（平均28文字/セクション）"
+        ],
+        "flashcard": [],
+        "questions": [
+          "抽象的な問題が多い（具体的なシナリオが不足）"
+        ]
+      }
+    },
+    {
+      "topicId": "strat-1-1-2",
+      "issues": {
+        "explanation": [
+          "内容が極端に薄い（平均31文字/セクション）"
+        ],
+        "flashcard": [],
+        "questions": [
+          "抽象的な問題が多い（具体的なシナリオが不足）"
+        ]
+      }
+    },
+    {
+      "topicId": "strat-1-1-3",
+      "issues": {
+        "explanation": [
+          "内容が極端に薄い（平均32文字/セクション）"
+        ],
+        "flashcard": [],
+        "questions": [
+          "抽象的な問題が多い（具体的なシナリオが不足）"
+        ]
+      }
+    },
+    {
+      "topicId": "strat-1-1-4",
+      "issues": {
+        "explanation": [
+          "内容が極端に薄い（平均30文字/セクション）"
+        ],
+        "flashcard": [],
+        "questions": [
+          "抽象的な問題が多い（具体的なシナリオが不足）"
+        ]
+      }
+    },
+    {
+      "topicId": "strat-1-2-1",
+      "issues": {
+        "explanation": [
+          "内容が極端に薄い（平均24文字/セクション）"
+        ],
+        "flashcard": [
+          "内容が薄い（front平均20文字、back平均25文字）"
+        ],
+        "questions": [
+          "抽象的な問題が多い（具体的なシナリオが不足）"
+        ]
+      }
+    },
+    {
+      "topicId": "strat-1-2-2",
+      "issues": {
+        "explanation": [
+          "内容が極端に薄い（平均22文字/セクション）"
+        ],
+        "flashcard": [
+          "内容が薄い（front平均17文字、back平均20文字）"
+        ],
+        "questions": [
+          "問題数が3問のみ（5-10問あるべき）"
+        ]
+      }
+    },
+    {
+      "topicId": "strat-2-1-1",
+      "issues": {
+        "explanation": [
+          "内容が極端に薄い（平均25文字/セクション）"
+        ],
+        "flashcard": [
+          "内容が薄い（front平均21文字、back平均24文字）"
+        ],
+        "questions": [
+          "抽象的な問題が多い（具体的なシナリオが不足）"
+        ]
+      }
+    },
+    {
+      "topicId": "strat-2-1-2",
+      "issues": {
+        "explanation": [
+          "内容が極端に薄い（平均25文字/セクション）"
+        ],
+        "flashcard": [
+          "内容が薄い（front平均20文字、back平均25文字）"
+        ],
+        "questions": [
+          "抽象的な問題が多い（具体的なシナリオが不足）"
+        ]
+      }
+    },
+    {
+      "topicId": "strat-2-1-3",
+      "issues": {
+        "explanation": [
+          "内容が極端に薄い（平均22文字/セクション）"
+        ],
+        "flashcard": [
+          "内容が薄い（front平均17文字、back平均21文字）"
+        ],
+        "questions": [
+          "抽象的な問題が多い（具体的なシナリオが不足）"
+        ]
+      }
+    },
+    {
+      "topicId": "strat-2-2-1",
+      "issues": {
+        "explanation": [
+          "内容が極端に薄い（平均24文字/セクション）"
+        ],
+        "flashcard": [
+          "内容が薄い（front平均19文字、back平均23文字）"
+        ],
+        "questions": [
+          "問題数が3問のみ（5-10問あるべき）"
+        ]
+      }
+    },
+    {
+      "topicId": "strat-2-3-1",
+      "issues": {
+        "explanation": [
+          "内容が極端に薄い（平均29文字/セクション）"
+        ],
+        "flashcard": [
+          "内容が薄い（front平均22文字、back平均27文字）"
+        ],
+        "questions": [
+          "抽象的な問題が多い（具体的なシナリオが不足）"
+        ]
+      }
+    },
+    {
+      "topicId": "strat-2-3-2",
+      "issues": {
+        "explanation": [
+          "内容が極端に薄い（平均23文字/セクション）"
+        ],
+        "flashcard": [
+          "内容が薄い（front平均17文字、back平均23文字）"
+        ],
+        "questions": [
+          "問題数が3問のみ（5-10問あるべき）"
+        ]
+      }
+    },
+    {
+      "topicId": "strat-3-1-1",
+      "issues": {
+        "explanation": [
+          "内容が極端に薄い（平均29文字/セクション）"
+        ],
+        "flashcard": [
+          "内容が薄い（front平均22文字、back平均27文字）"
+        ],
+        "questions": [
+          "問題数が3問のみ（5-10問あるべき）"
+        ]
+      }
+    },
+    {
+      "topicId": "strat-3-1-2",
+      "issues": {
+        "explanation": [
+          "内容が極端に薄い（平均26文字/セクション）"
+        ],
+        "flashcard": [
+          "内容が薄い（front平均21文字、back平均26文字）"
+        ],
+        "questions": [
+          "抽象的な問題が多い（具体的なシナリオが不足）"
+        ]
+      }
+    },
+    {
+      "topicId": "strat-3-1-3",
+      "issues": {
+        "explanation": [
+          "内容が極端に薄い（平均23文字/セクション）"
+        ],
+        "flashcard": [
+          "内容が薄い（front平均17文字、back平均21文字）"
+        ],
+        "questions": [
+          "抽象的な問題が多い（具体的なシナリオが不足）"
+        ]
+      }
+    },
+    {
+      "topicId": "strat-3-2-1",
+      "issues": {
+        "explanation": [
+          "内容が極端に薄い（平均28文字/セクション）"
+        ],
+        "flashcard": [
+          "内容が薄い（front平均20文字、back平均24文字）"
+        ],
+        "questions": [
+          "抽象的な問題が多い（具体的なシナリオが不足）"
+        ]
+      }
+    },
+    {
+      "topicId": "strat-3-2-2",
+      "issues": {
+        "explanation": [
+          "内容が極端に薄い（平均21文字/セクション）"
+        ],
+        "flashcard": [
+          "内容が薄い（front平均17文字、back平均19文字）"
+        ],
+        "questions": [
+          "問題数が2問のみ（5-10問あるべき）"
+        ]
+      }
+    },
+    {
+      "topicId": "strat-3-3-1",
+      "issues": {
+        "explanation": [
+          "内容が極端に薄い（平均28文字/セクション）"
+        ],
+        "flashcard": [
+          "内容が薄い（front平均21文字、back平均25文字）"
+        ],
+        "questions": [
+          "抽象的な問題が多い（具体的なシナリオが不足）"
+        ]
+      }
+    },
+    {
+      "topicId": "strat-3-3-2",
+      "issues": {
+        "explanation": [
+          "内容が極端に薄い（平均25文字/セクション）"
+        ],
+        "flashcard": [
+          "内容が薄い（front平均22文字、back平均29文字）"
+        ],
+        "questions": [
+          "抽象的な問題が多い（具体的なシナリオが不足）"
+        ]
+      }
+    },
+    {
+      "topicId": "strat-3-3-3",
+      "issues": {
+        "explanation": [
+          "内容が極端に薄い（平均22文字/セクション）"
+        ],
+        "flashcard": [
+          "内容が薄い（front平均17文字、back平均21文字）"
+        ],
+        "questions": [
+          "問題数が3問のみ（5-10問あるべき）"
+        ]
+      }
+    },
+    {
+      "topicId": "strat-3-3-4",
+      "issues": {
+        "explanation": [
+          "内容が極端に薄い（平均22文字/セクション）"
+        ],
+        "flashcard": [
+          "内容が薄い（front平均18文字、back平均21文字）"
+        ],
+        "questions": [
+          "問題数が3問のみ（5-10問あるべき）"
+        ]
+      }
+    },
+    {
+      "topicId": "strat-3-3-5",
+      "issues": {
+        "explanation": [
+          "内容が極端に薄い（平均25文字/セクション）"
+        ],
+        "flashcard": [
+          "内容が薄い（front平均20文字、back平均29文字）"
+        ],
+        "questions": [
+          "抽象的な問題が多い（具体的なシナリオが不足）"
+        ]
+      }
+    },
+    {
+      "topicId": "strat-3-4-1",
+      "issues": {
+        "explanation": [
+          "内容が極端に薄い（平均24文字/セクション）"
+        ],
+        "flashcard": [
+          "内容が薄い（front平均21文字、back平均23文字）"
+        ],
+        "questions": [
+          "抽象的な問題が多い（具体的なシナリオが不足）"
+        ]
+      }
+    },
+    {
+      "topicId": "tech-1-1-1",
+      "issues": {
+        "explanation": [],
+        "flashcard": [
+          "内容が薄い（front平均15文字、back平均43文字）"
+        ],
+        "questions": [
+          "解説が薄い（平均45文字）"
+        ]
+      }
+    },
+    {
+      "topicId": "tech-1-1-3",
+      "issues": {
+        "explanation": [],
+        "flashcard": [
+          "内容が薄い（front平均13文字、back平均78文字）"
+        ],
+        "questions": []
+      }
+    },
+    {
+      "topicId": "tech-1-1-4",
+      "issues": {
+        "explanation": [],
+        "flashcard": [
+          "内容が薄い（front平均14文字、back平均99文字）"
+        ],
+        "questions": []
+      }
+    },
+    {
+      "topicId": "tech-1-2-2",
+      "issues": {
+        "explanation": [],
+        "flashcard": [
+          "内容が薄い（front平均12文字、back平均92文字）"
+        ],
+        "questions": []
+      }
+    },
+    {
+      "topicId": "tech-1-2-3",
+      "issues": {
+        "explanation": [],
+        "flashcard": [
+          "内容が薄い（front平均14文字、back平均82文字）"
+        ],
+        "questions": []
+      }
+    },
+    {
+      "topicId": "tech-1-3-2",
+      "issues": {
+        "explanation": [],
+        "flashcard": [
+          "内容が薄い（front平均15文字、back平均102文字）"
+        ],
+        "questions": []
+      }
+    },
+    {
+      "topicId": "tech-1-3-3",
+      "issues": {
+        "explanation": [],
+        "flashcard": [
+          "内容が薄い（front平均14文字、back平均90文字）"
+        ],
+        "questions": []
+      }
+    },
+    {
+      "topicId": "tech-2-1-1",
+      "issues": {
+        "explanation": [],
+        "flashcard": [],
+        "questions": [
+          "抽象的な問題が多い（具体的なシナリオが不足）"
+        ]
+      }
+    },
+    {
+      "topicId": "tech-2-2-1",
+      "issues": {
+        "explanation": [],
+        "flashcard": [],
+        "questions": [
+          "抽象的な問題が多い（具体的なシナリオが不足）"
+        ]
+      }
+    },
+    {
+      "topicId": "tech-2-2-2",
+      "issues": {
+        "explanation": [
+          "ファイルが存在しない"
+        ],
+        "flashcard": [],
+        "questions": []
+      }
+    },
+    {
+      "topicId": "tech-2-3-2",
+      "issues": {
+        "explanation": [
+          "プレースホルダーが含まれる"
+        ],
+        "flashcard": [],
+        "questions": [
+          "抽象的な問題が多い（具体的なシナリオが不足）"
+        ]
+      }
+    },
+    {
+      "topicId": "tech-2-3-3",
+      "issues": {
+        "explanation": [],
+        "flashcard": [],
+        "questions": [
+          "抽象的な問題が多い（具体的なシナリオが不足）"
+        ]
+      }
+    },
+    {
+      "topicId": "tech-2-4-1",
+      "issues": {
+        "explanation": [
+          "内容が極端に薄い（平均48文字/セクション）"
+        ],
+        "flashcard": [],
+        "questions": [
+          "解説が薄い（平均48文字）"
+        ]
+      }
+    },
+    {
+      "topicId": "tech-2-4-2",
+      "issues": {
+        "explanation": [
+          "内容が極端に薄い（平均32文字/セクション）"
+        ],
+        "flashcard": [],
+        "questions": [
+          "抽象的な問題が多い（具体的なシナリオが不足）"
+        ]
+      }
+    },
+    {
+      "topicId": "tech-2-4-3",
+      "issues": {
+        "explanation": [
+          "内容が極端に薄い（平均40文字/セクション）"
+        ],
+        "flashcard": [],
+        "questions": [
+          "抽象的な問題が多い（具体的なシナリオが不足）"
+        ]
+      }
+    },
+    {
+      "topicId": "tech-3-1-1",
+      "issues": {
+        "explanation": [
+          "内容が極端に薄い（平均32文字/セクション）"
+        ],
+        "flashcard": [],
+        "questions": [
+          "抽象的な問題が多い（具体的なシナリオが不足）"
+        ]
+      }
+    },
+    {
+      "topicId": "tech-3-1-2",
+      "issues": {
+        "explanation": [
+          "内容が極端に薄い（平均44文字/セクション）"
+        ],
+        "flashcard": [],
+        "questions": [
+          "問題数が3問のみ（5-10問あるべき）"
+        ]
+      }
+    },
+    {
+      "topicId": "tech-3-2-1",
+      "issues": {
+        "explanation": [
+          "内容が極端に薄い（平均28文字/セクション）"
+        ],
+        "flashcard": [],
+        "questions": [
+          "抽象的な問題が多い（具体的なシナリオが不足）"
+        ]
+      }
+    },
+    {
+      "topicId": "tech-3-2-2",
+      "issues": {
+        "explanation": [
+          "内容が極端に薄い（平均23文字/セクション）"
+        ],
+        "flashcard": [
+          "内容が薄い（front平均19文字、back平均25文字）"
+        ],
+        "questions": [
+          "問題数が2問のみ（5-10問あるべき）"
+        ]
+      }
+    },
+    {
+      "topicId": "tech-3-3-1",
+      "issues": {
+        "explanation": [
+          "内容が極端に薄い（平均27文字/セクション）"
+        ],
+        "flashcard": [],
+        "questions": [
+          "抽象的な問題が多い（具体的なシナリオが不足）"
+        ]
+      }
+    },
+    {
+      "topicId": "tech-3-3-2",
+      "issues": {
+        "explanation": [
+          "内容が極端に薄い（平均22文字/セクション）"
+        ],
+        "flashcard": [
+          "内容が薄い（front平均18文字、back平均23文字）"
+        ],
+        "questions": [
+          "抽象的な問題が多い（具体的なシナリオが不足）"
+        ]
+      }
+    },
+    {
+      "topicId": "tech-3-3-3",
+      "issues": {
+        "explanation": [
+          "内容が極端に薄い（平均34文字/セクション）"
+        ],
+        "flashcard": [],
+        "questions": [
+          "抽象的な問題が多い（具体的なシナリオが不足）"
+        ]
+      }
+    },
+    {
+      "topicId": "tech-3-3-4",
+      "issues": {
+        "explanation": [
+          "内容が極端に薄い（平均28文字/セクション）"
+        ],
+        "flashcard": [
+          "内容が薄い（front平均22文字、back平均29文字）"
+        ],
+        "questions": [
+          "抽象的な問題が多い（具体的なシナリオが不足）"
+        ]
+      }
+    },
+    {
+      "topicId": "tech-3-3-5",
+      "issues": {
+        "explanation": [
+          "内容が極端に薄い（平均24文字/セクション）"
+        ],
+        "flashcard": [
+          "内容が薄い（front平均20文字、back平均26文字）"
+        ],
+        "questions": [
+          "抽象的な問題が多い（具体的なシナリオが不足）"
+        ]
+      }
+    },
+    {
+      "topicId": "tech-3-4-1",
+      "issues": {
+        "explanation": [
+          "内容が極端に薄い（平均25文字/セクション）"
+        ],
+        "flashcard": [
+          "内容が薄い（front平均20文字、back平均26文字）"
+        ],
+        "questions": [
+          "抽象的な問題が多い（具体的なシナリオが不足）"
+        ]
+      }
+    },
+    {
+      "topicId": "tech-3-4-2",
+      "issues": {
+        "explanation": [
+          "内容が極端に薄い（平均26文字/セクション）"
+        ],
+        "flashcard": [
+          "内容が薄い（front平均18文字、back平均25文字）"
+        ],
+        "questions": [
+          "抽象的な問題が多い（具体的なシナリオが不足）"
+        ]
+      }
+    },
+    {
+      "topicId": "tech-3-4-3",
+      "issues": {
+        "explanation": [
+          "内容が極端に薄い（平均30文字/セクション）"
+        ],
+        "flashcard": [],
+        "questions": [
+          "抽象的な問題が多い（具体的なシナリオが不足）"
+        ]
+      }
+    },
+    {
+      "topicId": "tech-3-4-4",
+      "issues": {
+        "explanation": [
+          "内容が極端に薄い（平均24文字/セクション）"
+        ],
+        "flashcard": [
+          "内容が薄い（front平均20文字、back平均26文字）"
+        ],
+        "questions": [
+          "抽象的な問題が多い（具体的なシナリオが不足）"
+        ]
+      }
+    },
+    {
+      "topicId": "tech-3-5-1",
+      "issues": {
+        "explanation": [
+          "内容が極端に薄い（平均33文字/セクション）"
+        ],
+        "flashcard": [],
+        "questions": [
+          "抽象的な問題が多い（具体的なシナリオが不足）"
+        ]
+      }
+    },
+    {
+      "topicId": "tech-3-5-2",
+      "issues": {
+        "explanation": [
+          "内容が極端に薄い（平均35文字/セクション）"
+        ],
+        "flashcard": [],
+        "questions": [
+          "抽象的な問題が多い（具体的なシナリオが不足）"
+        ]
+      }
+    },
+    {
+      "topicId": "tech-3-5-3",
+      "issues": {
+        "explanation": [
+          "内容が極端に薄い（平均28文字/セクション）"
+        ],
+        "flashcard": [
+          "内容が薄い（front平均22文字、back平均29文字）"
+        ],
+        "questions": [
+          "抽象的な問題が多い（具体的なシナリオが不足）"
+        ]
+      }
+    },
+    {
+      "topicId": "tech-3-5-4",
+      "issues": {
+        "explanation": [
+          "内容が極端に薄い（平均24文字/セクション）"
+        ],
+        "flashcard": [
+          "内容が薄い（front平均21文字、back平均24文字）"
+        ],
+        "questions": [
+          "抽象的な問題が多い（具体的なシナリオが不足）"
+        ]
+      }
+    },
+    {
+      "topicId": "tech-3-5-5",
+      "issues": {
+        "explanation": [
+          "内容が極端に薄い（平均25文字/セクション）"
+        ],
+        "flashcard": [
+          "内容が薄い（front平均22文字、back平均27文字）"
+        ],
+        "questions": [
+          "抽象的な問題が多い（具体的なシナリオが不足）"
+        ]
+      }
+    },
+    {
+      "topicId": "tech-4-1-1",
+      "issues": {
+        "explanation": [
+          "内容が極端に薄い（平均27文字/セクション）"
+        ],
+        "flashcard": [],
+        "questions": [
+          "抽象的な問題が多い（具体的なシナリオが不足）"
+        ]
+      }
+    },
+    {
+      "topicId": "tech-4-1-2",
+      "issues": {
+        "explanation": [
+          "内容が極端に薄い（平均24文字/セクション）"
+        ],
+        "flashcard": [
+          "内容が薄い（front平均21文字、back平均23文字）"
+        ],
+        "questions": [
+          "抽象的な問題が多い（具体的なシナリオが不足）"
+        ]
+      }
+    },
+    {
+      "topicId": "tech-4-1-3",
+      "issues": {
+        "explanation": [
+          "内容が極端に薄い（平均24文字/セクション）"
+        ],
+        "flashcard": [
+          "内容が薄い（front平均18文字、back平均22文字）"
+        ],
+        "questions": [
+          "抽象的な問題が多い（具体的なシナリオが不足）"
+        ]
+      }
+    },
+    {
+      "topicId": "tech-4-1-4",
+      "issues": {
+        "explanation": [
+          "内容が極端に薄い（平均24文字/セクション）"
+        ],
+        "flashcard": [
+          "内容が薄い（front平均20文字、back平均24文字）"
+        ],
+        "questions": [
+          "抽象的な問題が多い（具体的なシナリオが不足）"
+        ]
+      }
+    },
+    {
+      "topicId": "tech-4-1-5",
+      "issues": {
+        "explanation": [
+          "内容が極端に薄い（平均34文字/セクション）"
+        ],
+        "flashcard": [],
+        "questions": [
+          "抽象的な問題が多い（具体的なシナリオが不足）"
+        ]
+      }
+    },
+    {
+      "topicId": "tech-4-2-1",
+      "issues": {
+        "explanation": [
+          "内容が極端に薄い（平均29文字/セクション）"
+        ],
+        "flashcard": [
+          "内容が薄い（front平均24文字、back平均30文字）"
+        ],
+        "questions": [
+          "抽象的な問題が多い（具体的なシナリオが不足）"
+        ]
+      }
+    },
+    {
+      "topicId": "tech-4-2-2",
+      "issues": {
+        "explanation": [
+          "内容が極端に薄い（平均27文字/セクション）"
+        ],
+        "flashcard": [
+          "内容が薄い（front平均23文字、back平均28文字）"
+        ],
+        "questions": [
+          "抽象的な問題が多い（具体的なシナリオが不足）"
+        ]
+      }
+    },
+    {
+      "topicId": "tech-4-2-3",
+      "issues": {
+        "explanation": [
+          "内容が極端に薄い（平均25文字/セクション）"
+        ],
+        "flashcard": [
+          "内容が薄い（front平均20文字、back平均26文字）"
+        ],
+        "questions": [
+          "抽象的な問題が多い（具体的なシナリオが不足）"
+        ]
+      }
+    },
+    {
+      "topicId": "tech-4-3-1",
+      "issues": {
+        "explanation": [
+          "内容が極端に薄い（平均29文字/セクション）"
+        ],
+        "flashcard": [
+          "内容が薄い（front平均21文字、back平均28文字）"
+        ],
+        "questions": [
+          "抽象的な問題が多い（具体的なシナリオが不足）"
+        ]
+      }
+    },
+    {
+      "topicId": "tech-4-3-2",
+      "issues": {
+        "explanation": [
+          "内容が極端に薄い（平均23文字/セクション）"
+        ],
+        "flashcard": [
+          "内容が薄い（front平均20文字、back平均22文字）"
+        ],
+        "questions": [
+          "抽象的な問題が多い（具体的なシナリオが不足）"
+        ]
+      }
+    },
+    {
+      "topicId": "tech-4-3-3",
+      "issues": {
+        "explanation": [
+          "内容が極端に薄い（平均22文字/セクション）"
+        ],
+        "flashcard": [
+          "内容が薄い（front平均18文字、back平均23文字）"
+        ],
+        "questions": [
+          "抽象的な問題が多い（具体的なシナリオが不足）"
+        ]
+      }
+    },
+    {
+      "topicId": "tech-4-3-4",
+      "issues": {
+        "explanation": [
+          "内容が極端に薄い（平均26文字/セクション）"
+        ],
+        "flashcard": [
+          "内容が薄い（front平均20文字、back平均26文字）"
+        ],
+        "questions": [
+          "抽象的な問題が多い（具体的なシナリオが不足）"
+        ]
+      }
+    },
+    {
+      "topicId": "tech-4-3-5",
+      "issues": {
+        "explanation": [
+          "内容が極端に薄い（平均24文字/セクション）"
+        ],
+        "flashcard": [
+          "内容が薄い（front平均19文字、back平均25文字）"
+        ],
+        "questions": [
+          "問題数が3問のみ（5-10問あるべき）"
+        ]
+      }
+    },
+    {
+      "topicId": "tech-4-3-6",
+      "issues": {
+        "explanation": [
+          "内容が極端に薄い（平均24文字/セクション）"
+        ],
+        "flashcard": [
+          "内容が薄い（front平均19文字、back平均26文字）"
+        ],
+        "questions": [
+          "問題数が3問のみ（5-10問あるべき）"
+        ]
+      }
+    }
+  ]
+}

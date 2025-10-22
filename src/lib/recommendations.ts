@@ -1,5 +1,12 @@
 import { createClient } from '@/lib/supabase/client';
 import { getAllTopics } from '@/lib/syllabus';
+import type { TopicProgress } from '@/lib/types';
+
+interface Topic {
+  id: string;
+  タイトル: string;
+  大分類: string;
+}
 
 export interface RecommendedTopic {
   topicId: string;
@@ -63,8 +70,8 @@ export async function getRecommendedTopics(
  * 弱点分野を検出（正解率が70%未満）
  */
 function detectWeakAreas(
-  progress: any[],
-  allTopics: any[]
+  progress: TopicProgress[],
+  allTopics: Topic[]
 ): RecommendedTopic[] {
   return progress
     .filter(p => {
@@ -93,8 +100,8 @@ function detectWeakAreas(
  * 復習が必要なトピックを検出（7日以上学習していない）
  */
 function detectReviewNeeded(
-  progress: any[],
-  allTopics: any[]
+  progress: TopicProgress[],
+  allTopics: Topic[]
 ): RecommendedTopic[] {
   const now = new Date();
   const sevenDaysAgo = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
@@ -136,8 +143,8 @@ function detectReviewNeeded(
  * 次に学ぶべきトピックを提案
  */
 function suggestNextTopics(
-  progress: any[],
-  allTopics: any[]
+  progress: TopicProgress[],
+  allTopics: Topic[]
 ): RecommendedTopic[] {
   const completedTopicIds = new Set(
     progress
@@ -195,7 +202,7 @@ function suggestNextTopics(
 /**
  * 習熟度を計算（0-100）
  */
-export function calculateMasteryLevel(progress: any): number {
+export function calculateMasteryLevel(progress: TopicProgress): number {
   if (!progress) return 0;
 
   let score = 0;
@@ -278,7 +285,7 @@ export function getMasteryTier(totalCompletions: number): {
 /**
  * トピックの総完了回数を計算
  */
-export function calculateTotalCompletions(progress: any): number {
+export function calculateTotalCompletions(progress: TopicProgress): number {
   if (!progress) return 0;
 
   let count = 0;

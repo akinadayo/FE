@@ -12,6 +12,7 @@ export interface HeatmapData {
 export function useHeatmapData(userId: string | undefined, days: number = 365) {
   const [data, setData] = useState<HeatmapData[]>([]);
   const [loading, setLoading] = useState(true);
+  const supabase = createClient();
 
   useEffect(() => {
     if (!userId) {
@@ -22,7 +23,6 @@ export function useHeatmapData(userId: string | undefined, days: number = 365) {
     async function fetchHeatmapData() {
       setLoading(true);
       try {
-        const supabase = createClient();
 
         // 指定された日数分の日付範囲を計算
         const endDate = new Date();
@@ -84,7 +84,7 @@ export function useHeatmapData(userId: string | undefined, days: number = 365) {
     }
 
     fetchHeatmapData();
-  }, [userId, days]);
+  }, [userId, days, supabase]);
 
   return {
     data,
