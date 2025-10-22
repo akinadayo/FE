@@ -72,11 +72,11 @@ function detectWeakAreas(
       // テストを受けているが正解率が70%未満
       return p.total_tests_taken > 0 && (p.average_score || 0) < 70;
     })
-    .map(p => {
+    .flatMap(p => {
       const topic = allTopics.find(t => t.id === p.topic_id);
-      if (!topic) return null;
+      if (!topic) return [];
 
-      return {
+      return [{
         topicId: p.topic_id,
         title: topic.タイトル,
         reason: 'weak_area' as const,
@@ -85,9 +85,8 @@ function detectWeakAreas(
         category: topic.大分類,
         averageScore: p.average_score || 0,
         masteryLevel: calculateMasteryLevel(p),
-      };
-    })
-    .filter((r): r is RecommendedTopic => r !== null);
+      }];
+    });
 }
 
 /**
@@ -109,16 +108,16 @@ function detectReviewNeeded(
       const lastUpdated = new Date(p.updated_at);
       return lastUpdated < sevenDaysAgo;
     })
-    .map(p => {
+    .flatMap(p => {
       const topic = allTopics.find(t => t.id === p.topic_id);
-      if (!topic) return null;
+      if (!topic) return [];
 
       const lastUpdated = new Date(p.updated_at);
       const daysSinceLastStudy = Math.floor(
         (now.getTime() - lastUpdated.getTime()) / (24 * 60 * 60 * 1000)
       );
 
-      return {
+      return [{
         topicId: p.topic_id,
         title: topic.タイトル,
         reason: 'review_needed' as const,
@@ -128,9 +127,8 @@ function detectReviewNeeded(
         lastStudiedDays: daysSinceLastStudy,
         averageScore: p.average_score || 0,
         masteryLevel: calculateMasteryLevel(p),
-      };
-    })
-    .filter((r): r is RecommendedTopic => r !== null);
+      }];
+    });
 }
 
 /**
@@ -158,13 +156,12 @@ function suggestNextTopics(
 
   // 学習中のトピックを最優先
   const continueTopics = Array.from(inProgressTopicIds)
-    .map(topicId => {
+    .flatMap(topicId => {
       const topic = allTopics.find(t => t.id === topicId);
-      if (!topic) return null;
-
       const prog = progress.find(p => p.topic_id === topicId);
+      if (!topic || !prog) return [];
 
-      return {
+      return [{
         topicId,
         title: topic.タイトル,
         reason: 'continue_learning' as const,
@@ -172,9 +169,8 @@ function suggestNextTopics(
         priority: 4,
         category: topic.大分類,
         masteryLevel: calculateMasteryLevel(prog),
-      };
-    })
-    .filter((r): r is RecommendedTopic => r !== null);
+      }];
+    });
 
   // 未開始のトピックを次に学ぶべきトピックとして提案（順序順）
   const nextTopics = allTopics
