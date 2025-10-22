@@ -381,7 +381,7 @@ export function useSearchUsers(userId: string | undefined) {
       });
 
       setResults(searchResults);
-    } catch (err) {
+    } catch {
       // Silently fail - user search is optional
       setResults([]);
     } finally {

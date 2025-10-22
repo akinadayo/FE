@@ -72,7 +72,7 @@ export function useTopicProgress(userId: string | undefined) {
     return () => {
       supabase.removeChannel(channel);
     };
-  }, [userId]);
+  }, [userId, supabase]);
 
   const getProgress = (topicId: string): TopicProgress | undefined => {
     return progressMap.get(topicId);

@@ -89,7 +89,7 @@ export function useNotifications(userId: string | undefined) {
     return () => {
       supabase.removeChannel(channel);
     };
-  }, [userId]);
+  }, [userId, supabase]);
 
   const markAsRead = async (notificationId: string) => {
     if (!userId) return { success: false, error: 'User not found' };

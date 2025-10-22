@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { createClient } from '@/lib/supabase/client';
 import { calculateMasteryLevel, calculateTotalCompletions, getMasteryTier } from '@/lib/recommendations';
 
@@ -91,6 +91,7 @@ export function useTopicMastery(userId: string | undefined, topicId: string | un
 export function useTopicsMastery(userId: string | undefined, topicIds: string[]) {
   const [masteryMap, setMasteryMap] = useState<Map<string, TopicMastery>>(new Map());
   const [loading, setLoading] = useState(true);
+  const topicIdsKey = useMemo(() => topicIds.join(','), [topicIds]);
 
   useEffect(() => {
     if (!userId || topicIds.length === 0) {
@@ -151,7 +152,7 @@ export function useTopicsMastery(userId: string | undefined, topicIds: string[])
     }
 
     fetchMasteries();
-  }, [userId, topicIds.join(',')]);
+  }, [userId, topicIdsKey, topicIds]);
 
   return {
     masteryMap,

@@ -37,7 +37,7 @@ export function useStudySession(userId: string | undefined, topicId: string | un
 
       setSessionId(data.id);
       startTimeRef.current = now;
-    } catch (error) {
+    } catch {
       // Silently fail - study sessions are optional
       // If the table doesn't exist, we just skip time tracking
       setIsActive(false);
@@ -67,7 +67,7 @@ export function useStudySession(userId: string | undefined, topicId: string | un
 
           setIsActive(false);
           startTimeRef.current = null;
-        } catch (error) {
+        } catch {
           // Silently fail - study sessions are optional
         }
       })();
