@@ -26,8 +26,8 @@ export function Home({ onNavigate }: HomeProps) {
   const { achievements, stats: achievementStats } = useAchievements(user?.id);
   const { recommendations, loading: recLoading } = useRecommendations(user?.id, 1);
 
-  // Calculate daily goal progress (2 hours = 120 minutes)
-  const dailyGoalMinutes = 120;
+  // Calculate daily goal progress (20 minutes default)
+  const dailyGoalMinutes = 20;
   const dailyProgress = Math.min((todayMinutes / dailyGoalMinutes) * 100, 100);
   const remainingMinutes = Math.max(dailyGoalMinutes - todayMinutes, 0);
 
@@ -57,7 +57,7 @@ export function Home({ onNavigate }: HomeProps) {
                 <Target className="w-4 h-4" />
                 <span className="text-xs">今日の目標</span>
               </div>
-              <h2 className="text-white text-xl">2時間</h2>
+              <h2 className="text-white text-xl">20分</h2>
             </div>
             <div className="text-3xl animate-float">🎯</div>
           </div>
