@@ -37,9 +37,9 @@ export function useStudySession(userId: string | undefined, topicId: string | un
 
       setSessionId(data.id);
       startTimeRef.current = now;
-    } catch {
-      // Silently fail - study sessions are optional
-      // If the table doesn't exist, we just skip time tracking
+      console.log('Study session started:', data.id);
+    } catch (error) {
+      console.error('Failed to start study session:', error);
       setIsActive(false);
     }
   }, [userId, topicId]);
@@ -55,6 +55,8 @@ export function useStudySession(userId: string | undefined, topicId: string | un
           const startTime = startTimeRef.current || endTime;
           const durationSeconds = Math.round((endTime.getTime() - startTime.getTime()) / 1000);
 
+          console.log('Ending session:', prevSessionId, 'Duration:', durationSeconds, 'seconds');
+
           const { error } = await supabaseRef.current
             .from('study_sessions')
             .update({
@@ -65,10 +67,11 @@ export function useStudySession(userId: string | undefined, topicId: string | un
 
           if (error) throw error;
 
+          console.log('Study session ended successfully');
           setIsActive(false);
           startTimeRef.current = null;
-        } catch {
-          // Silently fail - study sessions are optional
+        } catch (error) {
+          console.error('Failed to end study session:', error);
         }
       })();
 
