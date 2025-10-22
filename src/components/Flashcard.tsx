@@ -408,6 +408,28 @@ export function Flashcard({ onNavigate, unitData }: FlashcardProps) {
                 </div>
               </Button>
             </div>
+
+            {/* Skip to complete button on last card */}
+            {currentCard === totalCards && (
+              <Button
+                variant="outline"
+                className="w-full h-12 border-2 border-green-300 bg-gradient-to-r from-green-50 to-emerald-50 hover:from-green-100 hover:to-emerald-100"
+                onClick={handleComplete}
+                disabled={completing}
+              >
+                {completing ? (
+                  <>
+                    <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-green-600 mr-2" />
+                    完了処理中...
+                  </>
+                ) : (
+                  <>
+                    <CheckCircle className="w-4 h-4 mr-2" />
+                    学習を完了する
+                  </>
+                )}
+              </Button>
+            )}
           </div>
         )}
 

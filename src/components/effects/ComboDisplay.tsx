@@ -22,7 +22,7 @@ export function ComboDisplay({ combo }: ComboDisplayProps) {
   };
 
   return (
-    <div className="combo-display fixed top-24 left-1/2 transform -translate-x-1/2 z-50 pointer-events-none">
+    <div className="combo-display fixed top-32 left-1/2 transform -translate-x-1/2 z-50 pointer-events-none">
       <div className={`combo-content bg-gradient-to-r ${getComboColor()} text-white px-6 py-3 rounded-full shadow-2xl`}>
         <div className="flex items-center gap-3">
           <div className="text-4xl font-black combo-number">

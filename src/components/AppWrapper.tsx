@@ -10,6 +10,7 @@ import { Header } from "@/components/Header";
 import { BottomNav } from "@/components/BottomNav";
 import { useIsMobile } from "@/components/ui/use-mobile";
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet";
+import { getTopicById } from "@/lib/syllabus";
 
 // Dynamically import heavy components to reduce initial bundle size
 const Explanation = dynamic(() => import("@/components/Explanation").then(mod => ({ default: mod.Explanation })), {
@@ -129,13 +130,17 @@ export function AppWrapper() {
   };
 
   const getHeaderTitle = () => {
+    const topicId = navigation.data?.topicId as string | undefined;
+    const topic = topicId ? getTopicById(topicId) : null;
+    const topicTitle = topic?.タイトル || '単元';
+
     switch (navigation.screen) {
       case 'home': return 'FE学習アプリ';
       case 'learning': return '学習コンテンツ';
-      case 'unitDetail': return '論理回路';
-      case 'explanation': return '論理回路 - 解説';
-      case 'flashcard': return 'フラッシュカード';
-      case 'test': return '論理回路 テスト';
+      case 'unitDetail': return topicTitle;
+      case 'explanation': return `${topicTitle} - 解説`;
+      case 'flashcard': return `${topicTitle} - フラッシュカード`;
+      case 'test': return `${topicTitle} - テスト`;
       case 'testResult': return 'テスト結果';
       case 'statistics': return '学習統計';
       case 'friends': return 'フレンド';
@@ -236,7 +241,7 @@ export function AppWrapper() {
           </div>
 
           {/* Mobile Bottom Nav */}
-          {isMobile && navigation.screen !== 'test' && <BottomNav currentScreen={navigation.screen} onNavigate={navigate} />}
+          {isMobile && !['test', 'explanation', 'flashcard'].includes(navigation.screen) && <BottomNav currentScreen={navigation.screen} onNavigate={navigate} />}
         </div>
       </div>
 

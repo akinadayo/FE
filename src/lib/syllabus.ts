@@ -49,6 +49,17 @@ export function getTopicById(topicId: string): Topic | null {
   return topics.find((topic) => topic.id === topicId) || null
 }
 
+export function getNextTopic(currentTopicId: string): Topic | null {
+  const topics = getAllTopics()
+  const currentIndex = topics.findIndex((topic) => topic.id === currentTopicId)
+
+  if (currentIndex === -1 || currentIndex === topics.length - 1) {
+    return null
+  }
+
+  return topics[currentIndex + 1]
+}
+
 export function getTopicPath(topicId: string): {
   category: string
   midCategory: string

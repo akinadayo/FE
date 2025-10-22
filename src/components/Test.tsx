@@ -532,7 +532,7 @@ export function Test({ onNavigate, unitData }: TestProps) {
                   <AlertCircle className="w-4 h-4 text-blue-500 mt-0.5 shrink-0" />
                   <h4 className="font-semibold text-gray-700 text-sm">解説</h4>
                 </div>
-                <p className="text-sm text-gray-600 leading-relaxed ml-6">{currentQ.explanation}</p>
+                <p className="text-sm text-gray-600 leading-relaxed ml-6 whitespace-pre-wrap font-mono">{currentQ.explanation}</p>
               </div>
 
               <div className="mt-3">
