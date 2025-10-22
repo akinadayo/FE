@@ -72,7 +72,7 @@ export function useHeatmapData(userId: string | undefined, days: number = 365) {
             level,
           });
 
-          currentDate.setDate(currentDate.getDate() + 1);
+          currentDate = new Date(currentDate.getTime() + 24 * 60 * 60 * 1000);
         }
 
         setData(heatmapData);
