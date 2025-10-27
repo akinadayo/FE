@@ -51,6 +51,11 @@ interface TestData {
   questions: Question[];
 }
 
+interface ShuffledOption {
+  text: string;
+  originalIndex: number;
+}
+
 export function Test({ onNavigate, unitData }: TestProps) {
   const { user } = useAuth();
   const [testData, setTestData] = useState<TestData | null>(null);
@@ -61,6 +66,7 @@ export function Test({ onNavigate, unitData }: TestProps) {
   const [showResult, setShowResult] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [topicStatus, setTopicStatus] = useState<string | null>(null);
+  const [shuffledOptions, setShuffledOptions] = useState<ShuffledOption[]>([]);
 
   const { startSession, endSession } = useStudySession(user?.id, unitData?.topicId);
   const { saveTestScore } = useTopicActions(user?.id);
@@ -74,6 +80,29 @@ export function Test({ onNavigate, unitData }: TestProps) {
   const [combo, setCombo] = useState(0);
 
   const topic = unitData?.topicId ? getTopicById(unitData.topicId) : null;
+
+  // Fisher-Yates shuffle algorithm
+  const shuffleOptions = (options: string[]): ShuffledOption[] => {
+    const shuffled: ShuffledOption[] = options.map((text, index) => ({
+      text,
+      originalIndex: index
+    }));
+
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+
+    return shuffled;
+  };
+
+  // Shuffle options when question changes
+  useEffect(() => {
+    if (testData && testData.questions[currentQuestion]) {
+      const currentQ = testData.questions[currentQuestion];
+      setShuffledOptions(shuffleOptions(currentQ.options));
+    }
+  }, [testData, currentQuestion]);
 
   // Load topic status
   useEffect(() => {
@@ -141,14 +170,16 @@ export function Test({ onNavigate, unitData }: TestProps) {
   };
 
   const handleConfirmAnswer = () => {
-    if (selectedAnswer === null || !testData) return;
+    if (selectedAnswer === null || !testData || shuffledOptions.length === 0) return;
 
     const currentQ = testData.questions[currentQuestion];
-    const isCorrect = selectedAnswer === currentQ.correctAnswer;
+    // Convert shuffled index to original index
+    const originalAnswerIndex = shuffledOptions[selectedAnswer].originalIndex;
+    const isCorrect = originalAnswerIndex === currentQ.correctAnswer;
 
-    // 回答を記録
+    // 回答を記録（元のインデックスで保存）
     setAnsweredQuestions(prev => new Map(prev).set(currentQuestion, {
-      answer: selectedAnswer,
+      answer: originalAnswerIndex,
       correct: isCorrect
     }));
 
@@ -427,9 +458,9 @@ export function Test({ onNavigate, unitData }: TestProps) {
 
             {/* Options */}
             <div className="grid grid-cols-2 gap-2 mt-4">
-              {currentQ.options.map((option, index) => {
+              {shuffledOptions.map((option, index) => {
                 const isSelected = selectedAnswer === index;
-                const isCorrectOption = index === currentQ.correctAnswer;
+                const isCorrectOption = option.originalIndex === currentQ.correctAnswer;
                 const showCorrectAnswer = showResult && isCorrectOption;
                 const showIncorrectAnswer = showResult && isSelected && !isCorrect;
 
@@ -463,7 +494,7 @@ export function Test({ onNavigate, unitData }: TestProps) {
                     }}
                   >
                     <div className="flex-1 text-sm">
-                      {option}
+                      {option.text}
                     </div>
                     {showCorrectAnswer && (
                       <CheckCircle className="w-4 h-4 text-green-600 shrink-0 ml-2" />
@@ -521,7 +552,9 @@ export function Test({ onNavigate, unitData }: TestProps) {
                     <XCircle className="w-5 h-5 text-red-600" />
                     <div>
                       <h3 className="text-sm font-semibold text-red-700">不正解</h3>
-                      <p className="text-xs text-red-600">正解は選択肢 {currentQ.correctAnswer + 1} です</p>
+                      <p className="text-xs text-red-600">
+                        正解は「{currentQ.options[currentQ.correctAnswer]}」です
+                      </p>
                     </div>
                   </>
                 )}
